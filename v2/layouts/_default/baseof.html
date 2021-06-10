@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+    <head>
+
+        {{ block "meta" . }}{{ partial "meta.html" . }}{{ end }}
+
+        <title>{{ block "title" . }}
+            {{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}
+        {{ end }}</title>
+
+        {{ range .AlternativeOutputFormats }}
+            <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+        {{ end }}
+        
+        {{ block "styles" . }}{{ partial "styles.html" . }}{{ end }}
+
+    </head>
+    <body class="font-sans font-base font-normal">
+
+        <main class="w-screen h-screen max-w-full max-h-full" role="main">
+            {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+            {{ block "main" . }}{{ partial "main.html" . }}{{ end }}
+
+        </main>
+
+        {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+/* Use the font config as variables in your SCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .zoom-item {
+    @apply relative overflow-hidden shadow-xl w-16 h-16 rounded-full;
+  }
+  .zoom-image {
+    @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+  }
+
+  .zoom-item:hover .zoom-image {
+    @apply scale-125;
+  }
+
+  .container-spacing {
+    @apply container px-10 pb-12;
+  }
+}
