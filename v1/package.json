@@ -1,28 +1,22 @@
 {
-  "name": "gulp-starter",
-  "version": "0.0.0",
+  "name": "portfolio-v1",
+  "version": "1.0.5",
   "dependencies": {
-    "alpinejs": "^2.8.2",
-    "parcel": "^1.12.4"
+    "alpinejs": "^2.8.2"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^7.27.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-html": "^6.1.2",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "node-sass": "^6.0.0",
+    "@parcel/transformer-sass": "^2.0.0-nightly.722",
+    "autoprefixer": "^10.2.6",
+    "parcel": "^2.0.0-beta.3.1",
+    "postcss": "^8.3.4",
     "prettier": "^2.3.0",
-    "sass": "^1.34.0"
+    "sass": "^1.35.0",
+    "tailwindcss": "^2.1.4"
   },
   "scripts": {
-    "dev": "parcel watch index.html"
+    "dev": "parcel index.html"
   },
-  "description": "A boilerplate for building web projects with [Gulp](https://gulpjs.com/). Uses Gulp 4.x.",
+  "description": "",
   "main": ".eslintrc.js",
   "repository": {
     "type": "git",

@@ -3,7 +3,7 @@ export const Footer = ({ links }) => {
     return arr
       ? arr.map(({ url, label }) => {
           return (
-            <li key={url} className="mb-[1.5rem]">
+            <li key={url} className="mb-[1.5rem] text-blue-600 font-bold">
               <a href={url} target="_blank" rel="noopener">
                 {label}
               </a>
@@ -19,9 +19,11 @@ export const Footer = ({ links }) => {
         <div>
           <ul className="flex flex-col">{renderLinks(links)}</ul>
         </div>
-        <div className="cta">
-          <h3 className="text-6xl font-bold">Ready to take the next step and work together? </h3>
-          <a className="cta-btn" href="mailto:dan.ditomaso@gmail.com" id="contactme">
+        <div className="cta drop-shadow-md">
+          <h3 className="text-6xl font-bold text-blue-600">
+            Ready to take the next step and work together?
+          </h3>
+          <a className="btn" href="mailto:dan.ditomaso@gmail.com" id="contactme">
             Contact Me
           </a>
         </div>

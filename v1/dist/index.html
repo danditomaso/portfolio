@@ -1,486 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dan Ditomaso</title>
+    <meta name="description" content="Dan Ditomaso | Developer">
+    <meta name="keywords" content="dan ditomaso, github, developer, frontend, javascript, react, firebase, hackeryou, html, css">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dan Ditomaso">
+    <meta property="og:site_name" content="Dan Ditomaso | Developer">
+    <meta property="og:description" content="Dan Ditomaso | Front-End Web Developer">
+    <meta property="og:url" content="https://danditomaso.com">
+    <meta property="og:image" content="https://danditomaso.com/assets/danlogo.svg">
+    <meta property="og:image:secure_url" content="https://danditomaso.com/assets/danlogo.svg">
+    <meta property="twitter:image" content="https://danditomaso.com/assets/danlogo.svg">
+    <meta name="twitter:creator" content="@danditomaso">
+    <meta name="twitter:site" content="@danditomaso">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-7249423-2"></script>
+    <script>// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Dan Ditomaso</title>
-  <meta name="description" content="Dan Ditomaso | Developer">
-  <meta name="keywords" content="dan ditomaso, github, developer, frontend, javascript, react, firebase, hackeryou, html, css">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Dan Ditomaso">
-  <meta property="og:site_name" content="Dan Ditomaso | Developer">
-  <meta property="og:description" content="Dan Ditomaso | Front-End Web Developer">
-  <meta property="og:url" content="https://danditomaso.com">
-  <meta property="og:image" content="https://danditomaso.com/assets/danlogo.svg">
-  <meta property="og:image:secure_url" content="https://danditomaso.com/assets/danlogo.svg">
-  <meta property="twitter:image" content="https://danditomaso.com/assets/danlogo.svg">
-  <meta name="twitter:creator" content="@danditomaso">
-  <meta name="twitter:site" content="@danditomaso">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-7249423-2"></script>
-  <script>window.dataLayer = window.dataLayer || [];
+(function(modules, entry, mainEntry, parcelRequireName, globalName) {
+  /* eslint-disable no-undef */
+  var globalObject =
+    typeof globalThis !== 'undefined'
+      ? globalThis
+      : typeof self !== 'undefined'
+      ? self
+      : typeof window !== 'undefined'
+      ? window
+      : typeof global !== 'undefined'
+      ? global
+      : {};
+  /* eslint-enable no-undef */
 
-function gtag() {
-  dataLayer.push(arguments);
+  // Save the require from previous bundle to this closure if any
+  var previousRequire =
+    typeof globalObject[parcelRequireName] === 'function' &&
+    globalObject[parcelRequireName];
+
+  var cache = previousRequire.cache || {};
+  // Do not use `require` to prevent Webpack from trying to bundle this call
+  var nodeRequire =
+    typeof module !== 'undefined' &&
+    typeof module.require === 'function' &&
+    module.require.bind(module);
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire =
+          typeof globalObject[parcelRequireName] === 'function' &&
+          globalObject[parcelRequireName];
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error("Cannot find module '" + name + "'");
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = (cache[name] = new newRequire.Module(name));
+
+      modules[name][0].call(
+        module.exports,
+        localRequire,
+        module,
+        module.exports,
+        this,
+      );
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x) {
+      return newRequire(localRequire.resolve(x));
+    }
+
+    function resolve(x) {
+      return modules[name][1][x] || x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.register = function(id, exports) {
+    modules[id] = [
+      function(require, module) {
+        module.exports = exports;
+      },
+      {},
+    ];
+  };
+
+  Object.defineProperty(newRequire, 'root', {
+    get: function() {
+      return globalObject[parcelRequireName];
+    },
+  });
+
+  globalObject[parcelRequireName] = newRequire;
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  if (mainEntry) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(mainEntry);
+
+    // CommonJS
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+      module.exports = mainExports;
+
+      // RequireJS
+    } else if (typeof define === 'function' && define.amd) {
+      define(function() {
+        return mainExports;
+      });
+
+      // <script>
+    } else if (globalName) {
+      this[globalName] = mainExports;
+    }
+  }
+})({"ldApO":[function(require,module,exports) {
+var HMR_HOST = null;
+var HMR_PORT = null;
+var HMR_SECURE = false;
+var HMR_ENV_HASH = "aa9dba8ca27d5955";
+module.bundle.HMR_BUNDLE_ID = "181d4c7d52a5d0bb"; // @flow
+/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */ /*::
+import type {
+  HMRAsset,
+  HMRMessage,
+} from '@parcel/reporter-dev-server/src/HMRServer.js';
+interface ParcelRequire {
+  (string): mixed;
+  cache: {|[string]: ParcelModule|};
+  hotData: mixed;
+  Module: any;
+  parent: ?ParcelRequire;
+  isParcelRequire: true;
+  modules: {|[string]: [Function, {|[string]: string|}]|};
+  HMR_BUNDLE_ID: string;
+  root: ParcelRequire;
+}
+interface ParcelModule {
+  hot: {|
+    data: mixed,
+    accept(cb: (Function) => void): void,
+    dispose(cb: (mixed) => void): void,
+    // accept(deps: Array<string> | string, cb: (Function) => void): void,
+    // decline(): void,
+    _acceptCallbacks: Array<(Function) => void>,
+    _disposeCallbacks: Array<(mixed) => void>,
+  |};
+}
+declare var module: {bundle: ParcelRequire, ...};
+declare var HMR_HOST: string;
+declare var HMR_PORT: string;
+declare var HMR_ENV_HASH: string;
+declare var HMR_SECURE: boolean;
+*/ var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+function Module(moduleName) {
+    OldModule.call(this, moduleName);
+    this.hot = {
+        data: module.bundle.hotData,
+        _acceptCallbacks: [],
+        _disposeCallbacks: [],
+        accept: function(fn) {
+            this._acceptCallbacks.push(fn || function() {
+            });
+        },
+        dispose: function(fn) {
+            this._disposeCallbacks.push(fn);
+        }
+    };
+    module.bundle.hotData = undefined;
+}
+module.bundle.Module = Module;
+var checkedAssets/*: {|[string]: boolean|} */ , acceptedAssets/*: {|[string]: boolean|} */ , assetsToAccept/*: Array<[ParcelRequire, string]> */ ;
+function getHostname() {
+    return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
+}
+function getPort() {
+    return HMR_PORT || location.port;
+}
+// eslint-disable-next-line no-redeclare
+var parent = module.bundle.parent;
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+    var hostname = getHostname();
+    var port = getPort();
+    var protocol = HMR_SECURE || location.protocol == 'https:' && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? 'wss' : 'ws';
+    var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
+    // $FlowFixMe
+    ws.onmessage = function(event/*: {data: string, ...} */ ) {
+        checkedAssets = {
+        };
+        acceptedAssets = {
+        };
+        assetsToAccept = [];
+        var data = JSON.parse(event.data);
+        if (data.type === 'update') {
+            // Remove error overlay if there is one
+            removeErrorOverlay();
+            let assets = data.assets.filter((asset)=>asset.envHash === HMR_ENV_HASH
+            );
+            // Handle HMR Update
+            var handled = false;
+            assets.forEach((asset)=>{
+                var didAccept = asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
+                if (didAccept) handled = true;
+            });
+            if (handled) {
+                console.clear();
+                assets.forEach(function(asset) {
+                    hmrApply(module.bundle.root, asset);
+                });
+                for(var i = 0; i < assetsToAccept.length; i++){
+                    var id = assetsToAccept[i][1];
+                    if (!acceptedAssets[id]) hmrAcceptRun(assetsToAccept[i][0], id);
+                }
+            } else window.location.reload();
+        }
+        if (data.type === 'error') {
+            // Log parcel errors to console
+            for (let ansiDiagnostic of data.diagnostics.ansi){
+                let stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
+                console.error('🚨 [parcel]: ' + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
+            }
+            // Render the fancy html overlay
+            removeErrorOverlay();
+            var overlay = createErrorOverlay(data.diagnostics.html);
+            // $FlowFixMe
+            document.body.appendChild(overlay);
+        }
+    };
+    ws.onerror = function(e) {
+        console.error(e.message);
+    };
+    ws.onclose = function(e) {
+        console.warn('[parcel] 🚨 Connection to the HMR server was lost');
+    };
+}
+function removeErrorOverlay() {
+    var overlay = document.getElementById(OVERLAY_ID);
+    if (overlay) {
+        overlay.remove();
+        console.log('[parcel] ✨ Error resolved');
+    }
+}
+function createErrorOverlay(diagnostics) {
+    var overlay = document.createElement('div');
+    overlay.id = OVERLAY_ID;
+    let errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
+    for (let diagnostic of diagnostics){
+        let stack = diagnostic.codeframe ? diagnostic.codeframe : diagnostic.stack;
+        errorHTML += `\n      <div>\n        <div style="font-size: 18px; font-weight: bold; margin-top: 20px;">\n          🚨 ${diagnostic.message}\n        </div>\n        <pre>\n          ${stack}\n        </pre>\n        <div>\n          ${diagnostic.hints.map((hint)=>'<div>' + hint + '</div>'
+        ).join('')}\n        </div>\n      </div>\n    `;
+    }
+    errorHTML += '</div>';
+    overlay.innerHTML = errorHTML;
+    return overlay;
+}
+function getParents(bundle, id) /*: Array<[ParcelRequire, string]> */ {
+    var modules = bundle.modules;
+    if (!modules) return [];
+    var parents = [];
+    var k, d, dep;
+    for(k in modules)for(d in modules[k][1]){
+        dep = modules[k][1][d];
+        if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) parents.push([
+            bundle,
+            k
+        ]);
+    }
+    if (bundle.parent) parents = parents.concat(getParents(bundle.parent, id));
+    return parents;
+}
+function updateLink(link) {
+    var newLink = link.cloneNode();
+    newLink.onload = function() {
+        if (link.parentNode !== null) // $FlowFixMe
+        link.parentNode.removeChild(link);
+    };
+    newLink.setAttribute('href', // $FlowFixMe
+    link.getAttribute('href').split('?')[0] + '?' + Date.now());
+    // $FlowFixMe
+    link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+    if (cssTimeout) return;
+    cssTimeout = setTimeout(function() {
+        var links = document.querySelectorAll('link[rel="stylesheet"]');
+        for(var i = 0; i < links.length; i++){
+            // $FlowFixMe[incompatible-type]
+            var href = links[i].getAttribute('href');
+            var hostname = getHostname();
+            var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
+            var absolute = /^https?:\/\//i.test(href) && href.indexOf(window.location.origin) !== 0 && !servedFromHMRServer;
+            if (!absolute) updateLink(links[i]);
+        }
+        cssTimeout = null;
+    }, 50);
+}
+function hmrApply(bundle/*: ParcelRequire */ , asset/*:  HMRAsset */ ) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (asset.type === 'css') {
+        reloadCSS();
+        return;
+    }
+    let deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
+    if (deps) {
+        var fn = new Function('require', 'module', 'exports', asset.output);
+        modules[asset.id] = [
+            fn,
+            deps
+        ];
+    } else if (bundle.parent) hmrApply(bundle.parent, asset);
+}
+function hmrAcceptCheck(bundle/*: ParcelRequire */ , id/*: string */ , depsByBundle/*: ?{ [string]: { [string]: string } }*/ ) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
+        // If we reached the root bundle without finding where the asset should go,
+        // there's nothing to do. Mark as "accepted" so we don't reload the page.
+        if (!bundle.parent) return true;
+        return hmrAcceptCheck(bundle.parent, id, depsByBundle);
+    }
+    if (checkedAssets[id]) return;
+    checkedAssets[id] = true;
+    var cached = bundle.cache[id];
+    assetsToAccept.push([
+        bundle,
+        id
+    ]);
+    if (cached && cached.hot && cached.hot._acceptCallbacks.length) return true;
+    return getParents(module.bundle.root, id).some(function(v) {
+        return hmrAcceptCheck(v[0], v[1], null);
+    });
+}
+function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
+    var cached = bundle.cache[id];
+    bundle.hotData = {
+    };
+    if (cached && cached.hot) cached.hot.data = bundle.hotData;
+    if (cached && cached.hot && cached.hot._disposeCallbacks.length) cached.hot._disposeCallbacks.forEach(function(cb) {
+        cb(bundle.hotData);
+    });
+    delete bundle.cache[id];
+    bundle(id);
+    cached = bundle.cache[id];
+    if (cached && cached.hot && cached.hot._acceptCallbacks.length) cached.hot._acceptCallbacks.forEach(function(cb) {
+        var assetsToAlsoAccept = cb(function() {
+            return getParents(module.bundle.root, id);
+        });
+        if (assetsToAlsoAccept && assetsToAccept.length) assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
+    });
+    acceptedAssets[id] = true;
 }
 
+},{}],"jdlQs":[function(require,module,exports) {
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+    dataLayer.push(arguments);
+}
 gtag("js", new Date());
-gtag("config", "UA-7249423-2");</script>
-  <link rel="preconnect" href="//danditomaso.com">
-  <link href="/styles.c86c3119.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=block" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Noto+Serif:wght@400;700&display=block" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
- <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-<script nomodule="" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer=""></script> 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.43b30f10.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.442c5440.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.26109a4b.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.33b724c6.png">
-<script src="/styles.c86c3119.js"></script></head>
+gtag("config", "UA-7249423-2");
 
-<body>
-  <main id="home" role="main">
-    <!-- Start Navigation Menu Overlay  -->
-    <nav id="menu" class="overlay-nav" aria-label="Main menu">
-      <span class="overlay-nav-title" role="heading">Dan Ditomaso</span>
-      <ul>
-        <li class="overlay-nav-item">
-          <a href="#home">Home.</a>
-        </li>
-        <li class="overlay-nav-item">
-          <a href="#about">About Me.</a>
-        </li>
-        <li class="overlay-nav-item">
-          <a href="#portfolio">Portfolio.</a>
-        </li>
-        <li class="overlay-nav-item">
-          <a href="#contact">Contact Me.</a>
-        </li>
-      </ul>
-      <ul class="social-nav">
-        <li>
-          <a href="https://github.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open github page"><i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://linkedin.com/in/danielditomaso" target="_blank" rel="noreferrer" aria-label="Open linkedin page">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://codepen.io/danditomaso/" target="_blank" rel="noreferrer" aria-label="Open codepen site" alt="Link to Codepen">
-            <i class="fab fa-codepen"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open twitter page">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <!-- End Navigation Menu Overlay  -->
-    <!-- Start Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <div class="hero-header">
-          <label for="hamburger-menu" class="visuallyhidden">Menu</label>
-          <button class="hero-header-nav" id="menuButton" name="hamburger-menu">
-            <i class="fas fa-bars"></i>
-          </button>
-          <div class="hero-header-logo">
-            <img src="/danlogo.2670d50e.svg" alt="">
+},{}]},["ldApO","jdlQs"], "jdlQs", "parcelRequire902f")
+
+</script>
+    <link rel="preconnect" href="//danditomaso.com">
+    <link href="/index.fab7bf34.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule="" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer=""></script>
+  </head>
+
+  <body>
+    <main id="home" role="main">
+      <!-- Start Navigation Menu Overlay  -->
+      <nav id="menu" class="overlay-nav" aria-label="Main menu">
+        <span class="overlay-nav-title" role="heading">Dan Ditomaso</span>
+        <ul>
+          <li class="overlay-nav-item">
+            <a href="#home">Home.</a>
+          </li>
+          <li class="overlay-nav-item">
+            <a href="#about">About Me.</a>
+          </li>
+          <li class="overlay-nav-item">
+            <a href="#portfolio">Portfolio.</a>
+          </li>
+          <li class="overlay-nav-item">
+            <a href="#contact">Contact Me.</a>
+          </li>
+        </ul>
+        <ul class="social-nav">
+          <li>
+            <a href="https://github.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open github page"><i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/danielditomaso" target="_blank" rel="noreferrer" aria-label="Open linkedin page">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/danditomaso/" target="_blank" rel="noreferrer" aria-label="Open codepen site" alt="Link to Codepen">
+              <i class="fab fa-codepen"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open twitter page">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- End Navigation Menu Overlay  -->
+      <!-- Start Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="hero-header">
+            <label for="hamburger-menu" class="visuallyhidden">Menu</label>
+            <button class="hero-header-nav" id="menuButton" name="hamburger-menu">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="hero-header-logo">
+              <img src="/danlogo.2d532807.svg" alt="">
+            </div>
           </div>
+          <h1>Dan Ditomaso</h1>
+          <h2>Web Developer</h2>
+          <a href="#contact" class="btn-contact btn"> Get In Touch </a>
         </div>
-        <h1>Dan Ditomaso</h1>
-        <h2>Web Developer</h2>
-        <a href="#contact" class="btn-contact btn">
-          Get In Touch
+        <a href="#about">
+          <img id="next-arrow" src="/arrow.cf2359d8.svg" alt="Move to next section">
         </a>
-      </div>
-      <a href="#about">
-        <img id="next-arrow" src="/arrow.ade7741f.svg" alt="Move to next section">
-      </a>
-    </section>
-    <!-- End Hero Section -->
-    <!-- Start About Me Section -->
-    <section class="about" id="about">
-      <div class="about-container aboutGrid">
-        <h3>About Me.</h3>
-        <div class="about-content">
-          <h4>who i am</h4>
-          <p class="about-text">
-            Hi! My name is Dan Ditomaso, and I'm a Toronto-based Front-End Web
-            Developer. I enjoy designing and building beautiful, accessible, and responsive websites. I graduated in 2018 from the
-            <a href="https://hackeryou.com/courses/bootcamp" target="_blank" rel="noreferrer"><span class="underline">Immersive Web Development Program</span></a>
-            at
-            <a href="https://www.hackeryou.com" target="_blank" rel="noreferrer"><span class="underline">HackerYou</span></a> (renamed to Juno College in 2019). Prior to that, I worked as IT Infrastructure architect working with a number of cloud providers including Microsoft Azure, Amazon AWS, and GCP.
-            I have over 10 years experience in IT Infrastructure consulting, I realized while working in that role the importance of being a part of a team to deliver a steller customer experience. One of my goals of being a Front End Developer it to always build beautiful, functional web applications that also have a great user experience.
-          </p>
-
-          <h4>what i do</h4>
-          <p class="about-text">
-            I am a self motivated learner with a
-            thirst for knowledge on the latest web technologies and development best practices. I am a developer with a repertoire of projects that have taught me the value of excellence in all that I do. When you don’t
-            find me behind a computer, I'll be spending my time either playing
-            Ultimate Frisbee in one of the leagues around the city, or on rock climbing at one of the many cliffs that are located around Ontario.
-          </p>
-          <h4>what i bring</h4>
-          <p class="about-text">
-            I love what I do, and hold myself to very high standards. I bring
-            with me a keen desire to continue learning paired with my years of demonstrable
-            experience working with a variety of technologies both infrastructure and web based. I strive for excellence in everything I develop.
-          </p>
-        </div>
-        <!-- Start Skills Section -->
-        <section class="skills" role="list">
-          <div class="skills-content">
-            <h4>Skill set</h4>
-            <p>
-              I am proficient in:
+      </section>
+      <!-- End Hero Section -->
+      <!-- Start About Me Section -->
+      <section class="about" id="about">
+        <div class="about-container aboutGrid">
+          <h3>About Me.</h3>
+          <div class="about-content">
+            <h4>who i am</h4>
+            <p class="about-text">
+              Hi! My name is Dan Ditomaso, and I'm a Toronto-based Front-End Web Developer. I enjoy
+              designing and building beautiful, accessible, and responsive websites. I graduated in
+              2018 from the
+              <a href="https://hackeryou.com/courses/bootcamp" target="_blank" rel="noreferrer"><span class="underline">Immersive Web Development Program</span></a>
+              at
+              <a href="https://www.hackeryou.com" target="_blank" rel="noreferrer"><span class="underline">HackerYou</span></a>
+              (renamed to Juno College in 2019). Prior to that, I worked as IT Infrastructure
+              architect working with a number of cloud providers including Microsoft Azure, Amazon
+              AWS, and GCP. I have over 10 years experience in IT Infrastructure consulting, I
+              realized while working in that role the importance of being a part of a team to
+              deliver a steller customer experience. One of my goals of being a Front End Developer
+              it to always build beautiful, functional web applications that also have a great user
+              experience.
             </p>
-            <ul class="skills-list">
-              <li title="JavaScript" role="listitem">
-                <img src="/js.956d39e3.svg" alt="JavaScript Icon" role="img">
-                <p class="skills-name">JavaScript</p>
-              </li>
-              <li title="HTML5" role="listitem">
-                <img src="/html5.4f5b6c38.svg" loading="lazy" alt="HTML5 Icon" role="img">
-                <p class="skills-name">HTML</p>
-              </li>
-              <li title="CSS3" role="listitem">
-                <img src="/css3.04be090b.svg" loading="lazy" alt="CSS3
+
+            <h4>what i do</h4>
+            <p class="about-text">
+              I am a self motivated learner with a thirst for knowledge on the latest web
+              technologies and development best practices. I am a developer with a repertoire of
+              projects that have taught me the value of excellence in all that I do. When you don’t
+              find me behind a computer, I'll be spending my time either playing Ultimate Frisbee in
+              one of the leagues around the city, or on rock climbing at one of the many cliffs that
+              are located around Ontario.
+            </p>
+            <h4>what i bring</h4>
+            <p class="about-text">
+              I love what I do, and hold myself to very high standards. I bring with me a keen
+              desire to continue learning paired with my years of demonstrable experience working
+              with a variety of technologies both infrastructure and web based. I strive for
+              excellence in everything I develop.
+            </p>
+          </div>
+          <!-- Start Skills Section -->
+          <section class="skills" role="list">
+            <div class="skills-content">
+              <h4>Skill set</h4>
+              <p>I am proficient in:</p>
+              <ul class="skills-list">
+                <li title="JavaScript" role="listitem">
+                  <img src="/js.9a4fc0de.svg" alt="JavaScript Icon" role="img">
+                  <p class="skills-name">JavaScript</p>
+                </li>
+                <li title="HTML5" role="listitem">
+                  <img src="/html5.286d53da.svg" loading="lazy" alt="HTML5 Icon" role="img">
+                  <p class="skills-name">HTML</p>
+                </li>
+                <li title="CSS3" role="listitem">
+                  <img src="/css3.a91df36b.svg" loading="lazy" alt="CSS
                   Icon" role="img">
-                <p class="skills-name" role="listitem">CSS3</p>
-              </li>
-              <li title="Git">
-                <img src="/git.5d6bd114.svg" loading="lazy" alt="Git Icon" role="img">
-                <p class="skills-name">Git</p>
-              </li>
-              <li title="React" role="listitem">
-                <img src="/react.f6c07372.svg" loading="lazy" alt="React Icon" role="img">
-                <p class="skills-name">React</p>
-              </li>
-              <li title="Redux" role="listitem">
-                <img src="/redux.b6e359b8.svg" loading="lazy" alt="Redux Icon" role="img">
-                <p class="skills-name">Redux</p>
-              </li>
-              <li title="jQuery" role="listitem">
-                <img src="/jquery.4bea4bce.svg" loading="lazy" alt="jQuery Icon" role="img">
-                <p class="skills-name">jQuery</p>
-              </li>
-              <li title="Sass" role="listitem">
-                <img src="/sass.9832f729.svg" loading="lazy" alt="Sass Icon" role="img">
-                <p class="skills-name">Sass</p>
-              </li>
-              <li title="Linux" role="listitem">
-                <img src="/linux.59681c73.svg" loading="lazy" alt="linux Icon" role="img">
-                <p class="skills-name">Linux</p>
-              </li>
-              <li title="Docker" role="listitem">
-                <img src="/docker.18d2d708.svg" loading="lazy" alt="docker Icon" role="img">
-                <p class="skills-name">Docker</p>
-              </li>
-              <li title="Firebase" role="listitem">
-                <img src="/firebase.b032fb47.svg" loading="lazy" alt="firebase Icon" role="img">
-                <p class="skills-name">Firebase</p>
-              </li>
-              <li title="Amazon Web Services" role="listitem">
-                <img src="/aws.268456d9.svg" loading="lazy" alt="Amazon Web Services Icon" role="img">
-                <p class="skills-name" role="listitem">AWS</p>
-              </li>
-              <li title="Microsoft Azure" role="listitem">
-                <img src="/azure.c2822fa4.svg" loading="lazy" alt="Azure Web Services Icon" role="img">
-                <p class="skills-name" role="listitem">Azure</p>
-              </li>
-            </ul>
-            <p>
-              These are some of the frameworks & languages I am focusing on
-              learning:
+                  <p class="skills-name" role="listitem">CSS</p>
+                </li>
+                <li title="Git">
+                  <img src="/git.9ddad14f.svg" loading="lazy" alt="Git Icon" role="img">
+                  <p class="skills-name">Git</p>
+                </li>
+                <li title="React" role="listitem">
+                  <img src="/react.a622ae0f.svg" loading="lazy" alt="React Icon" role="img">
+                  <p class="skills-name">React</p>
+                </li>
+                <li title="Redux" role="listitem">
+                  <img src="/redux.c0d8e7c4.svg" loading="lazy" alt="Redux Icon" role="img">
+                  <p class="skills-name">Redux</p>
+                </li>
+                <li title="jQuery" role="listitem">
+                  <img src="/jquery.70a7ef86.svg" loading="lazy" alt="jQuery Icon" role="img">
+                  <p class="skills-name">jQuery</p>
+                </li>
+                <li title="Sass" role="listitem">
+                  <img src="/sass.9de2e30b.svg" loading="lazy" alt="Sass Icon" role="img">
+                  <p class="skills-name">Sass</p>
+                </li>
+                <li title="Linux" role="listitem">
+                  <img src="/linux.8a36129c.svg" loading="lazy" alt="linux Icon" role="img">
+                  <p class="skills-name">Linux</p>
+                </li>
+                <li title="Docker" role="listitem">
+                  <img src="/docker.54b3ec3c.svg" loading="lazy" alt="docker Icon" role="img">
+                  <p class="skills-name">Docker</p>
+                </li>
+                <li title="Firebase" role="listitem">
+                  <img src="/firebase.59a51206.svg" loading="lazy" alt="firebase Icon" role="img">
+                  <p class="skills-name">Firebase</p>
+                </li>
+                <li title="Amazon Web Services" role="listitem">
+                  <img src="/aws.0d8e4203.svg" loading="lazy" alt="Amazon Web Services Icon" role="img">
+                  <p class="skills-name" role="listitem">AWS</p>
+                </li>
+                <li title="Microsoft Azure" role="listitem">
+                  <img src="/azure.0f3bd15f.svg" loading="lazy" alt="Azure Web Services Icon" role="img">
+                  <p class="skills-name" role="listitem">Azure</p>
+                </li>
+              </ul>
+              <p>I am familar with:</p>
+              <ul>
+                <li title=".Dot Net Core" role="listitem">
+                  <img src="/NET_Core_Logo.svg.2debbcd4.png" loading="lazy" alt="dot net core Icon" role="img">
+                  <p class="skills-name">.Net Core</p>
+                </li>
+                <li title="MongoDB" role="listitem">
+                  <img src="/mongodb.6a6da4ce.png" loading="lazy" alt="MongoDB Icon" role="img">
+                  <p class="skills-name">MongoDB</p>
+                </li>
+              </ul>
+              <p>I am exploring the following:</p>
+              <ul>
+                <li title="Golang" role="listitem">
+                  <img src="/golang.a5196c0d.svg" loading="lazy" alt="Golang Icon" role="img">
+                  <p class="skills-name">Golang</p>
+                </li>
+                <li title=".Dot Net Core" role="listitem">
+                  <img src="/NET_Core_Logo.svg.2debbcd4.png" loading="lazy" alt="dot net core Icon" role="img">
+                  <p class="skills-name">.Net Core</p>
+                </li>
+                <li title="MongoDB" role="listitem">
+                  <img src="/mongodb.6a6da4ce.png" loading="lazy" alt="MongoDB Icon" role="img">
+                  <p class="skills-name">MongoDB</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- End Skills Section -->
+        </div>
+      </section>
+      <!-- End About Me Section -->
+      <!-- Start Portfolio Section -->
+      <section class="portfolio" id="portfolio">
+        <div class="portfolio-container portfolioGrid">
+          <h3>Portfolio.</h3>
+          <div class="portfolio-content"></div>
+        </div>
+      </section>
+      <!-- Start Contact Me Section -->
+      <section class="contact" id="contact">
+        <div class="contact-container contactGrid">
+          <h3 class="contact-title">Contact Me.</h3>
+          <div class="contact-content">
+            <a href="mailto:dan.ditomaso@gmail.com" class="contact-email"><span class="underline">dan.ditomaso@gmail.com</span></a>
+            <p class="contact-text">
+              I am currently employed as a Front-End Developer with
+              <a href="https://hackeryou.com/courses/bootcamp" target="_blank" rel="noreferrer"><span class="underline">a4 Media</span></a>
+              in Toronto where I get the opportunity to build awesome things! I'd still love to hear
+              you about from you if you have an opportunity
             </p>
-            <ul>
-              <li title="Golang" role="listitem">
-                <img src="/golang.069bfc03.svg" loading="lazy" alt="Golang Icon" role="img">
-                <p class="skills-name">Golang</p>
+            <ul class="social-nav contact-social">
+              <li>
+                <a href="https://github.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open github page"><i class="fab fa-github"></i>
+                </a>
               </li>
-              <li title=".Dot Net Core" role="listitem">
-                <img src="/NET_Core_Logo.svg.1ca89c8a.png" loading="lazy" alt="dot net core Icon" role="img">
-                <p class="skills-name">.Net Core</p>
+              <li>
+                <a href="https://linkedin.com/in/danielditomaso" target="_blank" rel="noreferrer" aria-label="Open linkedin page">
+                  <i class="fab fa-linkedin"></i>
+                </a>
               </li>
-              <li title="MongoDB" role="listitem">
-                <img src="/mongodb.cc3a7aa5.png" loading="lazy" alt="MongoDB Icon" role="img">
-                <p class="skills-name">MongoDB</p>
+              <li>
+                <a href="https://codepen.io/danditomaso/" target="_blank" rel="noreferrer" aria-label="Open codepen site" alt="Link to Codepen">
+                  <i class="fab fa-codepen"></i>
+                </a>
               </li>
-            </ul>
-            <p>
-              These are some of the frameworks & languages I am focusing on
-              learning:
-            </p>
-            <ul>
-              <li title="Golang" role="listitem">
-                <img src="/golang.069bfc03.svg" loading="lazy" alt="Golang Icon" role="img">
-                <p class="skills-name">Golang</p>
-              </li>
-              <li title=".Dot Net Core" role="listitem">
-                <img src="/NET_Core_Logo.svg.1ca89c8a.png" loading="lazy" alt="dot net core Icon" role="img">
-                <p class="skills-name">.Net Core</p>
-              </li>
-              <li title="MongoDB" role="listitem">
-                <img src="/mongodb.cc3a7aa5.png" loading="lazy" alt="MongoDB Icon" role="img">
-                <p class="skills-name">MongoDB</p>
+              <li>
+                <a href="https://twitter.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open twitter page">
+                  <i class="fab fa-twitter"></i>
+                </a>
               </li>
             </ul>
           </div>
-        </section>
-        <!-- End Skills Section -->
-      </div>
-    </section>
-    <!-- End About Me Section -->
-    <!-- Start Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-      <div class="portfolio-container portfolioGrid">
-        <h3>Portfolio.</h3>
-        <div class="portfolio-content">
-          <!-- Start of portfolio item 1 -->
-          <article class="portfolio-item portfolio-item1">
-            <div class="flex-column">
-              <div class="column-item">
-                <h4 class="portfolio-item-title">halpQ</h4>
-                <p class="portfolio-item-text">
-                  React "Ask-A-Question" Web Application
-                </p>
-                <label id="halpqLabel" for="halpq" class="row btn">More Details<span class="portfolio-item-detailsarrow"><i class="fas fa-arrow-right"></i></span></label>
-              </div>
-              <div class="column-item portfolio-item-image">
-                <img src="/halpq.6f316737.png" alt="A screenshot of the HalpQ application">
-              </div>
-            </div>
-            <input type="checkbox" name="halpqLabel" id="halpq" class="visuallyhidden">
-            <section class="portfolio-preview">
-              <div class="flex-column">
-                <div class="column-item">
-                  <p class="portfolio-preview-text">
-                    User authenticated ticketing system that helps students
-                    ask teachers for help in real time. It has two kinds of
-                    user accounts, ability to create classrooms of students
-                    and much more! Please use this key to enroll in a test
-                    classroom - LTEEjNet. Powered by React and Firebase.
-                  </p>
-                  <a href="https://halpq.danditomaso.com" class="portfolio-preview-links btn" target="_blank" rel="noopener">View Site</a>
-                  <a href="https://github.com/danditomaso/halpq" class="portfolio-preview-links btn" target="_blank" rel="noopener">View Repo
-                  </a>
-                </div>
-                <div class="column-item portfolio-preview-tech">
-                  <h4>Built using:</h4>
-                  <ul>
-                    <li>React</li>
-                    <li>React Router</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Firebase</li>
-                    <li>
-                      Pair Programming
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="portfolio-preview-devices">
-                <h4>Preview</h4>
-                <ul class="portfolio-preview-devices-list">
-                  <li title="mobile">
-                    <i class="fas fa-mobile-alt fa-3x" data-size="mobile"></i>
-                  </li>
-                  <li title="tablet">
-                    <i class="fas fa-tablet-alt fa-3x" data-size="tablet"></i>
-                  </li>
-                  <li title="desktop">
-                    <i class="fas fa-desktop fa-3x" data-size="desktop"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="portfolio-preview-site">
-                <iframe src="https://halpq.danditomaso.com" loading="lazy" frameborder="0" allow-same-origin="allow-same-origin" class="portfolio-preview-embed desktop">
-                </iframe>
-              </div>
-            </section>
-          </article>
-          <!-- End of portfolio item 1 -->
-          <!-- Start of portfolio item 2 -->
-          <article class="portfolio-item portfolio-item2">
-            <div class="flex-column">
-              <div class="column-item">
-                <h4 class="portfolio-item-title">breakTime</h4>
-                <p class="portfolio-item-text">
-                  Nearby Restaurant Recommendations Web Application
-                </p>
-                <label id="breakTimeLabel" for="breakTime" class="row btn">More Details<span class="portfolio-item-detailsarrow"><i class="fas fa-arrow-right"></i></span></label>
-              </div>
-              <div class="column-item portfolio-item-image">
-                <img src="/breaktime.38aa075a.png" alt="A screenshot of the breaktime web application">
-              </div>
-            </div>
-            <input type="checkbox" name="breakTime" id="breakTime" class="visuallyhidden">
-            <section class="portfolio-preview">
-              <div class="flex-column">
-                <div class="column-item">
-                  <p class="portfolio-preview-text">
-                    The objective of this project was to design a site where
-                    bootcamp students could enter the duration of their break
-                    and the style of food they were interested in, and it
-                    would return a Google Map with resturants within the
-                    walking distance and alloted break time of HackerYou.The
-                    Zomato and Google Maps API's were heavily used on this
-                    project.
-                  </p>
-                  <a href="https://breaktime.danditomaso.com" class="portfolio-preview-links btn" target="_blank" rel="noopener">View Site</a>
-                  <a href="https://github.com/danditomaso/project4_val_dan" class="portfolio-preview-links btn" target="_blank" rel="noopener">View Repo
-                  </a>
-                </div>
-                <div class="column-item portfolio-preview-tech">
-                  <h4>Built using:</h4>
-                  <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>jQuery</li>
-                    <li>
-                      Pair Programming
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="portfolio-preview-devices">
-                <h4>Preview</h4>
-                <ul class="portfolio-preview-devices-list">
-                  <li>
-                    <i class="fas fa-mobile-alt fa-3x" title="change to mobile view" aria-label="change view to mobile layout" data-size="mobile"></i>
-                  </li>
-                  <li title="tablet">
-                    <i class="fas fa-tablet-alt fa-3x" title="change to tablet view" aria-label="change view to tablet layout" data-size="tablet"></i>
-                  </li>
-                  <li title="desktop">
-                    <i class="fas fa-desktop fa-3x" title="change to desktop view" aria-label="change view to desktop layout" data-size="desktop"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="portfolio-preview-site">
-                <iframe src="https://breaktime.danditomaso.com" loading="lazy" frameborder="0" allow-same-origin="allow-same-origin" class="portfolio-preview-embed desktop">
-                </iframe>
-              </div>
-            </section>
-          </article>
-          <article class="portfolio-item portfolio-item3">
-            <div class="flex-column">
-              <div class="column-item">
-                <h4 class="portfolio-item-title">Summit</h4>
-                <p class="portfolio-item-text">
-                  PSD to Website Convertion Project
-                </p>
-                <label id="summitLabel" for="summit" class="row btn">More Details<span class="portfolio-item-detailsarrow"><i class="fas fa-arrow-right"></i></span></label>
-              </div>
-              <div class="column-item portfolio-item-image" role="">
-                <img src="/summit.20ef8136.jpg" alt="A screenshot of the Summit web application">
-              </div>
-            </div>
-            <input type="checkbox" name="summitLabel" id="summit" class="visuallyhidden">
-            <section class="portfolio-preview">
-              <div class="flex-column">
-                <div class="column-item">
-                  <p class="portfolio-preview-text">
-                    This was a PSD conversion project that required attention
-                    to details and unique solutions in order to correctly
-                    accomplish the project objectives, the final project had
-                    to be fully responsive on mobile. Students were restricted
-                    to using only HTML5 and CSS3 only, no web frameworks were
-                    allowed.
-                  </p>
-                  <a href="https://summit.danditomaso.com" class="portfolio-preview-links btn" target="_blank" rel="noopener">View Site</a>
-                  <a href="https://github.com/danditomaso/dan_ditomaso_project1" class="portfolio-preview-links btn" target="_blank" rel="noopener">View Repo
-                  </a>
-                </div>
-                <div class="column-item portfolio-preview-tech">
-                  <h4>Built using:</h4>
-                  <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Responsive Design</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="portfolio-preview-devices">
-                <h4>Preview</h4>
-                <ul class="portfolio-preview-devices-list">
-                  <li title="mobile">
-                    <i class="fas fa-mobile-alt fa-3x" data-size="mobile"></i>
-                  </li>
-                  <li title="tablet">
-                    <i class="fas fa-tablet-alt fa-3x" data-size="tablet"></i>
-                  </li>
-                  <li title="desktop">
-                    <i class="fas fa-desktop fa-3x" data-size="desktop"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="portfolio-preview-site">
-                <iframe src="https://summit.danditomaso.com" loading="lazy" frameborder="0" allow-same-origin="allow-same-origin allow-scripts" class="portfolio-preview-embed desktop">
-                </iframe>
-              </div>
-            </section>
-          </article>
-          <!-- End of portfolio item 3 -->
+          <div class="contact-image" role="img">
+            <img class="contact-image" src="/me-small-alt.a4d360aa.png" loading="lazy" alt="A picture of me">
           </div>
-    </div></section>
-    <!-- End Portfolio Section -->
-    <!-- Start Contact Me Section -->
-    <section class="contact" id="contact">
-      <div class="contact-container contactGrid">
-        <h3 class="contact-title">Contact Me.</h3>
-        <div class="contact-content">
-          <a href="mailto:dan.ditomaso@gmail.com" class="contact-email"><span class="underline">dan.ditomaso@gmail.com</span></a>
-          <p class="contact-text">
-            I am currently employed as a Front-End Developer with a organization located in Toronto, Hamilton or Kitchener/Waterloo area. I'd love to hear from
-            you!
-          </p>
-          <ul class="social-nav contact-social">
-            <li>
-              <a href="https://github.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open github page"><i class="fab fa-github"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/danielditomaso" target="_blank" rel="noreferrer" aria-label="Open linkedin page">
-                <i class="fab fa-linkedin"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://codepen.io/danditomaso/" target="_blank" rel="noreferrer" aria-label="Open codepen site" alt="Link to Codepen">
-                <i class="fab fa-codepen"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/danditomaso" target="_blank" rel="noreferrer" aria-label="Open twitter page">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-          </ul>
         </div>
-        <div class="contact-image" role="img">
-          <img class="contact-image" src="/me-small-alt.075dfbce.png" loading="lazy" alt="A picture of me">
-        </div>
-      </div>
-    </section>
-    <!-- End Contact Me Section -->
-  </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-  <script src="/main.d8ebb8d6.js"></script>
-</body>
-
+      </section>
+      <!-- End Contact Me Section -->
+    </main>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> -->
+    <script src="/index.60350fc9.js"></script>
+  </body>
 </html>

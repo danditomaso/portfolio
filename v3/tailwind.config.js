@@ -7,14 +7,13 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ["Inter"],
+    },
     container: {
       center: true,
     },
-    extend: {
-      colors: {
-        primary: "var(--primary)",
-      },
-    },
+    extend: {},
   },
   variants: {
     extend: {},
