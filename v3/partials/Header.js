@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const Header = () => {
   return (
     <header className="max-w-7xl container h-full w-full">

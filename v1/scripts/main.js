@@ -60,7 +60,7 @@ const renderTechUsed = (techArr) => {
   return ` ${techArr.map((tech) => `<li>${tech}</li>`)}`;
 };
 
-const portfolioMarkup = (portfolio) => `<article class="portfolio-item">
+export const portfolioMarkup = (portfolio) => `<article class="portfolio-item">
             <div class="flex-column">
               <div class="column-item">
                 <h4 class="portfolio-item-title">${portfolio.title}</h4>
@@ -128,7 +128,7 @@ portfolioContent.innerHTML = _portfolioContent;
 
 // For all portfolio device icons add event listener to each (this may need to be refactored)
 portfolioDevices.forEach((element) => {
-  element.addEventListener("click", function(event) {
+  element.addEventListener("click", function (event) {
     try {
       const { target } = event;
       if (target.nodeName === "I") {

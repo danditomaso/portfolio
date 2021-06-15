@@ -1,6 +1,7 @@
-:root {
-  --primary: hsl(221, 63%, 43%);
-}
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *,
 *::before,
@@ -12,6 +13,12 @@ html,
 body {
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --primary: hsl(221, 63%, 43%);
 }
 
 body {
@@ -22,27 +29,20 @@ a {
   text-decoration: none;
 }
 
-section {
-  @apply max-w-7xl p-6 grid grid-cols-2 items-center;
-}
-
 .btn {
-  width: 180px;
-  height: 4rem;
+  width: 1.5rem;
+  padding: 2rem 0;
+  display: block;
+  text-align: center;
+  font-size: 1.4rem;
   text-transform: uppercase;
-  font-weight: bold;
-  transition: filter ease 250ms;
-  border: 4px solid blue;
-  color: blue;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: drop-shadow(8px 8px 0px blue);
+  color: white;
+  background: black;
+  transition: background 300ms;
 }
 
 .btn:hover {
-  filter: drop-shadow(0px 0px 0px);
+  filter: brightness(1);
 }
 
 @layer components {
