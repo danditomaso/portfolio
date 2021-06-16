@@ -14,7 +14,7 @@ export default [
       "html",
       "css",
     ],
-    screenshot: "../assets/portfolio/halpq.jpg",
+    screenshot: "./assets/portfolio/halpq.jpg",
     altText: "A screenshot of the HalpQ application",
     gLink: "https://github.com/danditomaso/halpq",
     wLink: "https://halpq.danditomaso.com/",
@@ -28,7 +28,7 @@ export default [
                     distance and alloted break time of HackerYou.The Zomato and
                     Google Maps API's were heavily used on this project.`,
     techUsed: ["javascript", "html", "css", "pair programming", "jquery"],
-    screenshots: ["../assets/portfolio/breaktime.jpg"],
+    screenshots: ["./assets/portfolio/breaktime.jpg"],
     gLink: "https://github.com/danditomaso/project4_val_dan",
     wLink: "https://breaktime.danditomaso.com/",
   },
@@ -41,7 +41,7 @@ export default [
                     using only HTML5 and CSS3 only, no web frameworks were
                     allowed.`,
     techUsed: ["html", "css"],
-    screenshots: ["../assets/portfolio/summit.jpg"],
+    screenshots: ["./assets/portfolio/summit.jpg"],
     gLink: "https://github.com/danditomaso",
     wLink: "https://summit.danditomaso.com/",
   },

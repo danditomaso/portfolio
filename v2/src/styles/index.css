@@ -23,12 +23,28 @@ body {
 
 body {
   position: relative;
+  letter-spacing: 1.1px;
 }
 
 a {
   text-decoration: none;
 }
 
+p {
+  line-height: 1.55;
+}
+
+h3 {
+  text-align: right;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 5.5rem;
+  font-weight: bold;
+}
+
+h4 {
+  @apply text-4xl font-bold;
+}
 .btn {
   width: 1.5rem;
   padding: 2rem 0;
