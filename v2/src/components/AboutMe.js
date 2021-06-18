@@ -1,5 +1,6 @@
 import { Section } from "./Section";
 import { TextBlock } from "./TextBlock";
+import "../styles/AboutMe.css";
 
 const aboutMeText = [
   {
@@ -129,9 +130,7 @@ const renderIcons = (arr = []) => {
             src={`./assets/skills/${icon}`}
             alt={`The beautiful ${label} logo.`}
           />
-          <figcaption className="bg-gray-400 p-2 h-10 text-sm flex items-center font-bold w-44">
-            {label}
-          </figcaption>
+          <figcaption className="skill-item--caption">{label}</figcaption>
         </figure>
       </li>
     );
@@ -143,12 +142,12 @@ const MySkills = ({ skillsArr = [] }) => {
 
   return (
     <>
-      <aside className="bg-gray-200 shadow-2xl h-full p-3">
-        <h4 className="items-center">Skill Set</h4>
+      <aside className="bg-gray-200 shadow-xl h-full p-3">
+        <h4 className="skillSection--title">Skill Set</h4>
         <p className="row-start-1 row-end-1 mt-4 font-bold">I am proficient in:</p>
-        <ul className="grid grid-flow-row grid-cols-4 gap-1 pt-3">{renderIcons(skillsArr[0])}</ul>
+        <ul className="skills--list">{renderIcons(skillsArr[0])}</ul>
         <p className="row-start-1 row-end-1 mt-4 font-bold">I am learning the following:</p>
-        <ul className="grid grid-flow-row grid-cols-4 gap-1 pt-3">{renderIcons(skillsArr[1])}</ul>
+        <ul className="skills--list">{renderIcons(skillsArr[1])}</ul>
       </aside>
     </>
   );
@@ -159,8 +158,8 @@ export const AboutMe = (props) => {
     <Section
       title="About Me."
       spanCols={false}
-      column1={aboutMeText.map(({ title, content }) => (
-        <TextBlock title={title} content={content} />
+      column1={aboutMeText.map(({ title, content }, index) => (
+        <TextBlock title={title} content={content} key={index} />
       ))}
       column2={<MySkills skillsArr={allSkills} />}
     />

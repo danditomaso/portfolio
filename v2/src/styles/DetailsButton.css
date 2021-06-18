@@ -1,0 +1,15 @@
+button {
+  transition: color 250ms ease;
+}
+
+button:hover {
+  color: var(--portfolio-color);
+}
+
+img {
+  transition: transform 250ms ease;
+}
+
+.detailsBtn:hover img {
+  transform: rotate(90deg);
+}

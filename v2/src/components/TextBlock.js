@@ -1,16 +1,19 @@
-import React from "react";
 import PropTypes from "prop-types";
 
-export const TextBlock = ({ title, content }) => {
+export const TextBlock = ({ title, content, extraClass }) => {
+  console.log(extraClass);
+
+  const { titleClass, bodyClass, containerClass } = extraClass;
   return (
-    <section className="mb-6">
-      <h4 className="mb-3">{title}</h4>
-      <p class="text-base font-normal">{content}</p>
-    </section>
+    <article className={`mb-6 p-3 ${containerClass}`}>
+      <h4 className={`mb-3 ${titleClass}`}>{title}</h4>
+      <p className={`${bodyClass}`}>{content}</p>
+    </article>
   );
 };
 
 TextBlock.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.array.isRequired,
+  content: PropTypes.string.isRequired,
+  extraClass: PropTypes.object,
 };

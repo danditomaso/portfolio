@@ -9,6 +9,10 @@ module.exports = {
         // 16: "repeat(16, minmax(0, 1fr))",
         // Complex site-specific column configuration
         section: "115px minmax(300px, 1fr) minmax(300px, 1fr)",
+        portfolio: "repeat(2, minmax(0, 1fr))",
+      },
+      gridTemplateRows: {
+        portfolio: "repeat(2, minmax(0, min-content))",
       },
     },
     borderWidth: {
@@ -30,9 +34,14 @@ module.exports = {
     container: {
       center: true,
     },
-  },
-  variants: {
-    extend: {},
+    screens: {
+      xs: "400px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
   },
   plugins: [],
 };

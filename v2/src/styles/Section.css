@@ -1,0 +1,42 @@
+@media (min-width: 400px) {
+  .section--title {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 640px) {
+  .section--title {
+    margin: 0;
+    text-align: left;
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section--title {
+    text-align: left;
+    writing-mode: initial;
+    transform: none;
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section--title {
+    text-align: right;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 5.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section--title {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 5.5rem;
+    font-weight: bold;
+  }
+}

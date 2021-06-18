@@ -1,0 +1,25 @@
+.portfolio-item:nth-child(1) {
+  --portfolio-color: #e40015;
+}
+
+.portfolio-item:nth-child(2) {
+  --portfolio-color: #01889f;
+}
+
+.portfolio-item:nth-child(3) {
+  --portfolio-color: #00699d;
+}
+
+.portfolio-item h4 {
+  transition: color 250ms ease;
+}
+
+.portfolio-item:hover h4 {
+  color: var(--portfolio-color);
+}
+
+.portfolio-item .portfolio-item--img {
+  border: solid #333;
+  border-width: 0.6rem 0.5rem;
+  border-radius: 3%;
+}
