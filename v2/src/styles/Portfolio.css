@@ -14,7 +14,7 @@
   transition: color 250ms ease;
 }
 
-.portfolio-item:hover h4 {
+.portfolio-item:hover h4:first-of-type {
   color: var(--portfolio-color);
 }
 

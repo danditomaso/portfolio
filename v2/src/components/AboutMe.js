@@ -6,12 +6,12 @@ const aboutMeText = [
   {
     title: "Who I Am",
     content:
-      "Hi! My name is Dan Ditomaso, and I'm a Toronto-based Front-End Web Developer. I enjoy designing and building beautiful, accessible, and responsive websites. I graduated in 2018 from the Immersive Web Development Program at HackerYou (renamed to Juno College in 2019). Prior to that, I worked as IT Infrastructure architect working with a number of cloud providers including Microsoft Azure, Amazon, AWS, and GCP. I have over 10 years experience in IT Infrastructure consulting, I realized while working in that role the importance of being a part of a team to deliver a steller customer experience. One of my goals of being a Front End Developer it to always build beautiful, functional web applications that also have a great user experience.",
+      "Hi! My name is Dan Ditomaso, and I'm a Toronto based Front End Developer. I enjoy designing and building beautiful, accessible, and responsive websites. I graduated in 2018 from the Immersive Web Development Program at HackerYou (renamed to Juno College in 2019). Prior to that, I worked as IT Infrastructure architect working with a number of cloud providers including Microsoft Azure and Amazon AWS. I have over 10 years experience in IT Infrastructure consulting, I realized while working in that role the importance of being a part of a team to deliver a steller customer experience. One of my goals of being a Front End Developer it to always build beautiful, functional web applications that also have a great user experience.",
   },
   {
     title: "What I Do",
     content:
-      "I am a self motivated learner with a thirst for knowledge on the latest web technologies and development best practices. I am a developer with a repertoire of projects that have taught me the value of excellence in all that I do. When you don’t find me behind a computer, I'll be spending my time either playing Ultimate Frisbee in one of the leagues around the city, or on rock climbing at one of the many cliffs that are located around Ontario.",
+      "I am a self motivated learner with a thirst for knowledge on the latest web technologies and development best practices. I am a developer with a repertoire of projects that have taught me the value of excellence in all that I do. When you don’t find me behind a computer, I'm most likely either playing competitive Ultimate Frisbee, or rock climbing at one the cliffs around Ontario.",
   },
   {
     title: "What I Bring",
@@ -126,6 +126,7 @@ const renderIcons = (arr = []) => {
       <li key={index} className="p-2">
         <figure className="flex items-center">
           <img
+            loading="lazy"
             className="h-10 w-10 p-1 bg-white"
             src={`./assets/skills/${icon}`}
             alt={`The beautiful ${label} logo.`}
@@ -161,7 +162,7 @@ export const AboutMe = (props) => {
       column1={aboutMeText.map(({ title, content }, index) => (
         <TextBlock title={title} content={content} key={index} />
       ))}
-      column2={<MySkills skillsArr={allSkills} />}
+      column2={<MySkills skillsArr={allSkills} id="aboutMe" />}
     />
   );
 };

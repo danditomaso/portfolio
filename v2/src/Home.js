@@ -1,6 +1,4 @@
-import { Header } from "./components/Header";
-import { AboutMe } from "./components/AboutMe";
-import { Portfolio } from "./components/Portfolio";
+import { Header, AboutMe, Portfolio, ContactMe } from "./components/index";
 
 function Home() {
   return (
@@ -8,6 +6,7 @@ function Home() {
       <Header />
       <AboutMe />
       <Portfolio />
+      <ContactMe />
     </div>
   );
 }

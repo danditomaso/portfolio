@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        contactMeBlue: "#21324c",
+      },
       gridTemplateColumns: {
         // Simple 16 column grid
         // 16: "repeat(16, minmax(0, 1fr))",

@@ -140,19 +140,6 @@ h4 {
   color: var(--white);
 }
 
-.underline {
-  background-image: linear-gradient(-45deg, hsla(247, 80%, 40%, 75%), hsla(210, 80%, 40%, 75%));
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
-  background-position: 0 95%;
-  transition: background-size 0.25s ease-in-out;
-  text-decoration: none;
-  &:hover {
-    background-size: 100% 95%;
-    color: white;
-  }
-}
-
 .flex-column {
   display: flex;
   flex-wrap: wrap;

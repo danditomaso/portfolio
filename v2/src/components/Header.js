@@ -1,22 +1,35 @@
-import { Nav } from "./Nav";
+import PropTypes from "prop-types";
+import { Button } from "./Button";
 import "../styles/Header.css";
+import "../styles/Nav.css";
 
-export const Header = (props) => {
+export const Header = () => {
   return (
-    <header id="header" className="h-full flex flex-col font-sans">
-      {/* <Nav /> */}
-      {/* <img src="./assets/danlogo.svg" alt="" /> */}
-      <div className="flex flex-col items-center justify-center space-y-6 h-full">
+    <header id="header" className="h-full flex flex-col font-sans relative">
+      <nav className="relative top-0 left-0">
+        <img src="./assets/danlogo.svg" className="bg-black w-16 h-16" alt="" />
+      </nav>
+      <div className="flex flex-col items-center justify-center space-y-12 h-full">
         <h1 className="text-6xl md:text-6xl sm:text-5xl xs:text-4xl font-light text-white uppercase">
           dan ditomaso
         </h1>
         <h2 className="text-8xl md:text-8xl sm:text-6xl xs:text-4xl font-serif font-light text-white">
-          Web Developer
+          Front End Developer
         </h2>
+        <Button title="Get In Touch" url="#contactMe" />
+        <svg
+          class="animate-bounce w-9 h-9 text-white absolute bottom-6"
+          fill="#fffe"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
-      {/* <a href="#contact" class="btn">
-          Get In Touch
-        </a> */}
     </header>
   );
 };
+
+Header.propTypes = {};
