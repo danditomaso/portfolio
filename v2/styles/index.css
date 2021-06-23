@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "AboutMe.css";
+@import "Button.css";
+@import "Header.css";
+@import "Nav.css";
+@import "Portfolio.css";
+@import "Section.css";
+
 *,
 *::before,
 *::after {
@@ -34,7 +41,6 @@ a {
 
 p {
   line-height: 1.55;
-  @apply text-lg;
 }
 
 h4 {

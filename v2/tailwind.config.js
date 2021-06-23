@@ -1,23 +1,8 @@
 module.exports = {
   mode: "jit",
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      colors: {
-        contactMeBlue: "#21324c",
-      },
-      gridTemplateColumns: {
-        // Simple 16 column grid
-        // 16: "repeat(16, minmax(0, 1fr))",
-        // Complex site-specific column configuration
-        section: "115px minmax(300px, 1fr) minmax(300px, 1fr)",
-        portfolio: "repeat(2, minmax(0, 1fr))",
-      },
-      gridTemplateRows: {
-        portfolio: "repeat(2, minmax(0, min-content))",
-      },
-    },
     borderWidth: {
       DEFAULT: "1px",
       0: "0",
@@ -26,9 +11,22 @@ module.exports = {
       4: "4px",
       6: "6px",
       8: "8px",
-      12: "12px",
       24: "24px",
-      36: "36px",
+    },
+    extend: {
+      colors: {
+        contactMeBlue: "#21324c",
+      },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        // 16: "repeat(16, minmax(0, 1fr))",
+        // Complex site-specific column configuration
+        section: "115px minmax(0px, 1fr) minmax(0px, 1fr)",
+        portfolio: "minmax(0, 1fr) minmax(0, 32rem)",
+      },
+      gridTemplateRows: {
+        portfolio: "repeat(2, minmax(0, min-content))",
+      },
     },
     fontFamily: {
       sans: ["Inter", "sans-serif"],
@@ -45,6 +43,9 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [],
 };

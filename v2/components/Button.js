@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/Button.css";
 
 export const Button = ({ title, icon, alt, url, extraClass = {}, handleClick }) => {
   const { containerClass } = extraClass;

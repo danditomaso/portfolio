@@ -18,8 +18,8 @@
   color: var(--portfolio-color);
 }
 
-.portfolio-item .portfolio-item--img {
-  border: solid #333;
+.portfolio-item--img {
+  /* border: solid #333;
   border-width: 0.6rem 0.5rem;
-  border-radius: 3%;
+  border-radius: 3%; */
 }

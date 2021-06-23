@@ -6,7 +6,7 @@ export const TextBlock = ({ title, content, extraClass = {}, children }) => {
   return (
     <article className={`mb-3 p-3 ${containerClass ? containerClass : ""}`}>
       {title ? <h4 className={`mb-3 ${titleClass ? titleClass : ""}`}>{title}</h4> : null}
-      <p className={`${bodyClass ? bodyClass : ""}`}>{content}</p>
+      <p className={`${bodyClass ? bodyClass : ""} `}>{content}</p>
       {children}
     </article>
   );

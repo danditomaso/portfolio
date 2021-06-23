@@ -1,7 +1,4 @@
-import PropTypes from "prop-types";
 import { Button } from "./Button";
-import "../styles/Header.css";
-import "../styles/Nav.css";
 
 export const Header = () => {
   return (
@@ -13,7 +10,7 @@ export const Header = () => {
         <h1 className="text-6xl md:text-6xl sm:text-5xl xs:text-4xl font-light text-white uppercase">
           dan ditomaso
         </h1>
-        <h2 className="text-8xl md:text-8xl sm:text-6xl xs:text-4xl font-serif font-light text-white">
+        <h2 className="text-8xl lg:text-8xl md:text-6xl xs:text-4xl font-serif font-light text-white">
           Front End Developer
         </h2>
         <Button title="Get In Touch" url="#contactMe" />

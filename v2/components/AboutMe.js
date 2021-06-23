@@ -1,6 +1,5 @@
 import { Section } from "./Section";
 import { TextBlock } from "./TextBlock";
-import "../styles/AboutMe.css";
 
 const aboutMeText = [
   {
