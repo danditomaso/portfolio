@@ -58,7 +58,7 @@ const allSkills = [
       label: "Pair Programming",
     },
     {
-      icon: "funcprogram.png",
+      icon: "funcprogram.webp",
       label: "Functional Programming",
     },
     {
@@ -79,7 +79,7 @@ const allSkills = [
     },
     {
       icon: "docker.svg",
-      label: "Primsa",
+      label: "Docker",
     },
     {
       icon: "aws.svg",
@@ -92,7 +92,7 @@ const allSkills = [
   ],
   [
     {
-      icon: "prisma.png",
+      icon: "prisma.webp",
       label: "Primsa",
     },
     {
@@ -153,7 +153,7 @@ const MySkills = ({ skillsArr = [] }) => {
   );
 };
 
-export const AboutMe = (props) => {
+const AboutMe = (props) => {
   return (
     <Section
       title="About Me."
@@ -165,3 +165,4 @@ export const AboutMe = (props) => {
     />
   );
 };
+export default AboutMe;

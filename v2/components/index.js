@@ -1,7 +1,11 @@
-import { AboutMe } from "./AboutMe";
-import { ContactMe } from "./ContactMe";
-import { Button } from "./Button";
-import { Header } from "./Header";
-import { Portfolio } from "./Portfolio";
+import dynamic from "next/dynamic";
 
-export { AboutMe, ContactMe, Button, Header, Portfolio };
+const dynamicImports = {
+  AboutMe: dynamic(() => import("./AboutMe")),
+  Button: dynamic(() => import("./Button")),
+  ContactMe: dynamic(() => import("./ContactMe")),
+  Header: dynamic(() => import("./Header")),
+  Portfolio: dynamic(() => import("./Portfolio")),
+};
+
+export const { AboutMe, ContactMe, Button, Header, Portfolio } = dynamicImports;

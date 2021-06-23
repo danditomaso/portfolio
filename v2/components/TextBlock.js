@@ -13,7 +13,7 @@ export const TextBlock = ({ title, content, extraClass = {}, children }) => {
 };
 
 TextBlock.propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string,
   title: PropTypes.string,
   extraClass: PropTypes.object,
 };

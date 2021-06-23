@@ -29,7 +29,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Inter", "sans-serif"],
+      sans: ["Noto Sans JP", "sans-serif"],
       serif: ["Playfair Display", "serif"],
     },
     container: {

@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 
-export const Header = () => {
+const Header = () => {
   return (
     <header id="header" className="h-full flex flex-col font-sans relative">
       <nav className="relative top-0 left-0">
@@ -15,11 +15,11 @@ export const Header = () => {
         </h2>
         <Button title="Get In Touch" url="#contactMe" />
         <svg
-          class="animate-bounce w-9 h-9 text-white absolute bottom-6"
+          className="animate-bounce w-9 h-9 text-white absolute bottom-6"
           fill="#fffe"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
           viewBox="0 0 24 24"
           stroke="currentColor">
           <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -28,5 +28,7 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;
 
 Header.propTypes = {};
