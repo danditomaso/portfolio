@@ -22,7 +22,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Noto Sans JP", "sans-serif"],
+      sans: ["Roboto", "sans-serif"],
       serif: ["Playfair Display", "serif"],
     },
     container: {

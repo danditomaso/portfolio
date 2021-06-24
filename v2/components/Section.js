@@ -11,10 +11,12 @@ export const Section = ({
   const { containerClass } = extraClass;
   return (
     <section
-      className={`my-12 grid lg:grid-cols-section  ${spanCols ? "" : "gap-2"} ${
+      className={`my-12 grid lg:grid-cols-section  ${spanCols ? "" : "gap-1"} ${
         containerClass ? containerClass : ""
       }`}>
-      <h3 className="section--title sm:text-[4.8rem] lg:mx-8 sm:my-4 lg:text-[5.5rem]">{title}</h3>
+      <h3 className="section--title xs:text-5xl md:text-6xl lg:mx-8 sm:my-4 lg:text-8xl">
+        {title}
+      </h3>
       <div className={`${spanCols ? "col-span-2" : ""}`}>{column1}</div>
       {spanCols ? null : <div className="column2 my-4">{column2}</div>}
       {children}

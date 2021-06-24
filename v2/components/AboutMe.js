@@ -11,7 +11,7 @@ const renderIcons = (arr = []) => {
         <figure className="flex items-center">
           <img
             loading="lazy"
-            className="h-10 w-10 p-1 bg-white"
+            className="h-11 w-11 p-1 bg-white"
             src={`./assets/skills/${icon}`}
             alt={`The beautiful ${label} logo.`}
           />
@@ -30,9 +30,9 @@ const MySkills = ({ skillsArr = [] }) => {
       <aside className="bg-gray-200 shadow-xl h-full p-3">
         <h4 className="skillSection--title">Skill Set</h4>
         <p className="mt-3 font-bold">I am proficient in:</p>
-        <ul className="skills--list mt-3">{renderIcons(skillsArr[0])}</ul>
+        <ul className="mt-3">{renderIcons(skillsArr[0])}</ul>
         <p className="mt-3 font-bold">I am learning the following:</p>
-        <ul className="mt-3 skills--list">{renderIcons(skillsArr[1])}</ul>
+        <ul className="mt-3">{renderIcons(skillsArr[1])}</ul>
       </aside>
     </>
   );
