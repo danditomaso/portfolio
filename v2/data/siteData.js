@@ -122,7 +122,7 @@ export const allSkills = [
       label: "Sass",
     },
     {
-      icon: "linux.svg",
+      icon: "linux.webp",
       label: "Linux",
     },
     {
