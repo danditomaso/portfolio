@@ -6,6 +6,7 @@ const dynamicImports = {
   ContactMe: dynamic(() => import("./ContactMe")),
   Header: dynamic(() => import("./Header")),
   Portfolio: dynamic(() => import("./Portfolio")),
+  Social: dynamic(() => import("./Social")),
 };
 
-export const { AboutMe, ContactMe, Button, Header, Portfolio } = dynamicImports;
+export const { AboutMe, ContactMe, Button, Header, Portfolio, Social } = dynamicImports;
