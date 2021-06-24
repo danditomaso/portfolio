@@ -1,8 +1,19 @@
+import PropTypes from "prop-types";
 import { Button } from "./Button";
+
+const handleClick = (scrollRef) => {
+  return scrollRef.current.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest",
+    inline: "start",
+  });
+};
 
 const Header = ({ scrollRef }) => {
   return (
-    <header id="header" className="h-full font-sans relative w-full">
+    <header
+      id="header"
+      className="font-sans w-full xs:border-0 md:border-24 border-solid border-white h-screen">
       <div className="relative top-0 left-0">
         <img src="./assets/danlogo.svg" className="bg-black w-16 h-16" alt="" />
       </div>
@@ -13,18 +24,9 @@ const Header = ({ scrollRef }) => {
         <h2 className="text-8xl lg:text-8xl md:text-6xl xs:text-4xl font-serif font-light text-white">
           Front End Developer
         </h2>
-        <Button
-          title="Get In Touch"
-          handleClick={() =>
-            scrollRef.current.scrollIntoView({
-              behavior: "smooth",
-              block: "nearest",
-              inline: "start",
-            })
-          }
-        />
+        <Button title="Get In Touch" handleClick={() => handleClick(scrollRef)} />
         <svg
-          className="animate-bounce w-9 h-9 text-white absolute bottom-6"
+          className="animate-bounce w-9 h-9 text-white absolute bottom-10"
           fill="#fffe"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -38,6 +40,12 @@ const Header = ({ scrollRef }) => {
   );
 };
 
-export default Header;
+Header.propTypes = {
+  scrollRef: PropTypes.object.isRequired,
+};
 
-Header.propTypes = {};
+handleClick.propTypes = {
+  scrollRef: PropTypes.object.isRequired,
+};
+
+export default Header;

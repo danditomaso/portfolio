@@ -14,9 +14,7 @@ export const Section = ({
       className={`my-12 grid lg:grid-cols-section  ${spanCols ? "" : "gap-2"} ${
         containerClass ? containerClass : ""
       }`}>
-      <h3 className="section--title sm:text-5xl lg:mx-8 sm:my-4 lg:mx-0 lg:text-[5.5rem]">
-        {title}
-      </h3>
+      <h3 className="section--title sm:text-5xl lg:mx-8 sm:my-4 lg:text-[5.5rem]">{title}</h3>
       <div className={`${spanCols ? "col-span-2" : ""}`}>{column1}</div>
       {spanCols ? null : <div className="column2 my-4">{column2}</div>}
       {children}

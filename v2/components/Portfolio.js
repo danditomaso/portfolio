@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Section } from "./Section";
 import { Button } from "./Button";
 import { TextBlock } from "./TextBlock";
-import portfolioData from "../data/portfolioData";
+import { portfolioData } from "../data/siteData";
 
 const ITEM_HEADER_EXTRA_CLASS = {
   titleClass: "font-serif text-5xl",
@@ -80,4 +81,11 @@ const Portfolio = () => {
   );
 };
 
+renderPortfolioItems.propTypes = {
+  arr: PropTypes.array.isRequired,
+};
+
+renderBuiltUsing.propTypes = {
+  techUsed: PropTypes.array.isRequired,
+};
 export default Portfolio;
