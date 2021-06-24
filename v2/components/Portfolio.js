@@ -6,7 +6,7 @@ import { TextBlock } from "./TextBlock";
 import { portfolioData } from "../data/siteData";
 
 const ITEM_HEADER_EXTRA_CLASS = {
-  titleClass: "font-serif text-5xl",
+  titleClass: "font-serif xs:text-5xl",
 };
 const BUILT_USING_EXTRA_CLASS = {
   titleClass: "text-[2rem]",
