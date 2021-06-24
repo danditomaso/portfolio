@@ -1,9 +1,12 @@
+import React from "react";
 import Head from "next/head";
 import { Header, AboutMe, Portfolio, ContactMe } from "../components/index";
 
 export default function Home() {
+  const scrollRef = React.useRef(null);
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="do-the-flex-thing items-center justify-center min-h-screen">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,10 +23,12 @@ export default function Home() {
       </Head>
 
       <div className="xs:border-0 md:border-24 border-solid border-white h-screen">
-        <Header />
+        <Header scrollRef={scrollRef} />
         <AboutMe />
         <Portfolio />
-        <ContactMe />
+        <div ref={scrollRef}>
+          <ContactMe />
+        </div>
       </div>
     </div>
   );

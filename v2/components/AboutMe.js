@@ -144,10 +144,10 @@ const MySkills = ({ skillsArr = [] }) => {
     <>
       <aside className="bg-gray-200 shadow-xl h-full p-3">
         <h4 className="skillSection--title">Skill Set</h4>
-        <p className="row-start-1 row-end-1 mt-4 font-bold">I am proficient in:</p>
-        <ul className="skills--list">{renderIcons(skillsArr[0])}</ul>
-        <p className="row-start-1 row-end-1 mt-4 font-bold">I am learning the following:</p>
-        <ul className="skills--list">{renderIcons(skillsArr[1])}</ul>
+        <p className="mt-3 font-bold">I am proficient in:</p>
+        <ul className="skills--list mt-3">{renderIcons(skillsArr[0])}</ul>
+        <p className="mt-3 font-bold">I am learning the following:</p>
+        <ul className="mt-3 skills--list">{renderIcons(skillsArr[1])}</ul>
       </aside>
     </>
   );

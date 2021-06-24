@@ -31,7 +31,7 @@ const renderPortfolioItems = (arr) => {
 
     return (
       <article
-        className="border-t-2 border-black px-3 grid lg:grid-cols-2 md:my-10 first:mt-0 items-center justify-center portfolio-item last:mb-0"
+        className="border-t-2 border-gray-200 border-b-2 py-8 grid lg:grid-cols-2 items-center justify-center portfolio-item"
         key={githubLink}>
         <div className="">
           <TextBlock title={title} content={shortDesc} extraClass={ITEM_HEADER_EXTRA_CLASS} />
@@ -40,7 +40,7 @@ const renderPortfolioItems = (arr) => {
             <ul className="flex flex-wrap">{renderBuiltUsing(techUsed)}</ul>
           </TextBlock>
 
-          <div className="flex space-x-5 mt-5">
+          <div className="flex space-x-5 mb-3">
             <Button
               title={"View Site"}
               url={workLink}
