@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="do-the-flex-thing items-center justify-center min-h-screen">
       <Head>
-        <title>Create Next App</title>
+        <title>Dan Ditomaso</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         {/* <link
