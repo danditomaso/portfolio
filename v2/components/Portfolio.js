@@ -1,11 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Section } from "./Section";
 import { Button } from "./Button";
 import { TextBlock } from "./TextBlock";
-import portfolioData from "../data/portfolioData";
+import { portfolioData } from "../data/siteData";
 
 const ITEM_HEADER_EXTRA_CLASS = {
-  titleClass: "font-serif text-5xl",
+  titleClass: "font-serif xs:text-5xl",
 };
 const BUILT_USING_EXTRA_CLASS = {
   titleClass: "text-[2rem]",
@@ -31,7 +32,7 @@ const renderPortfolioItems = (arr) => {
 
     return (
       <article
-        className="border-t-2 border-black px-3 grid lg:grid-cols-2 md:my-10 first:mt-0 items-center justify-center portfolio-item last:mb-0"
+        className="border-t-2 border-gray-200 border-b-2 py-8 grid lg:grid-cols-2 items-center justify-center portfolio-item"
         key={githubLink}>
         <div className="">
           <TextBlock title={title} content={shortDesc} extraClass={ITEM_HEADER_EXTRA_CLASS} />
@@ -40,7 +41,7 @@ const renderPortfolioItems = (arr) => {
             <ul className="flex flex-wrap">{renderBuiltUsing(techUsed)}</ul>
           </TextBlock>
 
-          <div className="flex space-x-5 mt-5">
+          <div className="flex space-x-5 mb-3">
             <Button
               title={"View Site"}
               url={workLink}
@@ -80,4 +81,11 @@ const Portfolio = () => {
   );
 };
 
+renderPortfolioItems.propTypes = {
+  arr: PropTypes.array.isRequired,
+};
+
+renderBuiltUsing.propTypes = {
+  techUsed: PropTypes.array.isRequired,
+};
 export default Portfolio;

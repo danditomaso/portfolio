@@ -18,18 +18,11 @@ module.exports = {
         contactMeBlue: "#21324c",
       },
       gridTemplateColumns: {
-        // Simple 16 column grid
-        // 16: "repeat(16, minmax(0, 1fr))",
-        // Complex site-specific column configuration
-        section: "115px minmax(0px, 1fr) minmax(0px, 1fr)",
-        portfolio: "minmax(0, 1fr) minmax(0, 32rem)",
-      },
-      gridTemplateRows: {
-        portfolio: "repeat(2, minmax(0, min-content))",
+        section: "115px repeat(2, minmax(0px, 1fr))",
       },
     },
     fontFamily: {
-      sans: ["Noto Sans JP", "sans-serif"],
+      sans: ["Roboto", "sans-serif"],
       serif: ["Playfair Display", "serif"],
     },
     container: {
