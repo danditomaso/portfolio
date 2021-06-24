@@ -21,7 +21,7 @@ const Header = ({ scrollRef }) => {
         <h1 className="text-6xl md:text-6xl sm:text-5xl xs:text-4xl font-light text-white uppercase">
           dan ditomaso
         </h1>
-        <h2 className="text-8xl lg:text-8xl md:text-6xl xs:text-4xl font-serif font-light text-white">
+        <h2 className="xl:text-7xl lg:text-6xl md:text-6xl xs:text-4xl font-serif font-light text-white">
           Front End Developer
         </h2>
         <Button title="Get In Touch" handleClick={() => handleClick(scrollRef)} />
