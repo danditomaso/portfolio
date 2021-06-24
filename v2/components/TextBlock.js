@@ -16,4 +16,5 @@ TextBlock.propTypes = {
   content: PropTypes.string,
   title: PropTypes.string,
   extraClass: PropTypes.object,
+  children: PropTypes.element,
 };

@@ -1,3 +1,4 @@
+import { Layout } from "../components/";
 import "/styles/index.css";
 
 export function reportWebVitals(metric) {
@@ -5,7 +6,11 @@ export function reportWebVitals(metric) {
 }
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 export default MyApp;

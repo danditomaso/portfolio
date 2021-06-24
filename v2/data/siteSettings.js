@@ -1,6 +1,7 @@
 export const siteSettings = {
   siteName: "Dan Ditomaso",
   description: "Frontend Developer",
-  image: "https://danditomaso.com/me.jpg",
+  twitter: "@danditomaso",
+  image: "https://danditomaso.com/me.webp",
   url: "https://danditomaso.com/",
 };
