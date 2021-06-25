@@ -7,12 +7,12 @@ const ContactMe = () => {
   };
 
   const SECTION_EXTRA_CLASS = {
-    containerClass: "gap-0",
+    containerClass: "gap-0 h-full",
   };
 
   const renderColumn1 = () => {
     return (
-      <div className="lg:flex xs:flex-col lg:flex-row w-full h-full text-white bg-contactMeBlue">
+      <div className="xs:flex lg:flex-row w-full h-full text-white bg-contactMeBlue">
         <TextBlock
           content={
             "I am currently employed full time as a Frontend Developer working with a team of folks building awesome things! If you have an opportunity that you would like to share I'd love to hear from you!"
@@ -22,7 +22,7 @@ const ContactMe = () => {
             <span className="underline">dan.ditomaso@gmail.com</span>
           </a>
         </TextBlock>
-        <picture className="sm:w-52 sm:flex m-auto xs:hidden md:ml-auto h-full items-center">
+        <picture className="sm:w-36 lg:w-48 sm:flex xs:hidden m-auto w-full h-full items-center">
           <source srcSet="./assets/me-small.webp" type="image/webp" />
           <img
             loading="lazy"
