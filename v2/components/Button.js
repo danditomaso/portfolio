@@ -12,7 +12,16 @@ const Button = ({ title, icon, alt, url, extraClass = {}, handleClick }) => {
       ) : (
         title
       )}
-      {icon ? <img loading="lazy" className="h-7 w-7 ml-2 m-1 p-1" alt={alt} src={icon} /> : null}
+      {icon ? (
+        <img
+          loading="lazy"
+          width="28px"
+          height="28px"
+          className="h-7 w-7 ml-2 m-1 p-1"
+          alt={alt}
+          src={icon}
+        />
+      ) : null}
     </button>
   );
 };
