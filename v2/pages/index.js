@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header scrollRef={scrollRef} />
-      <main className="xs:border-10 md:border-24 border-solid border-white h-screen relative">
+      <main className="xs:border-10 md:border-24 border-solid border-white h-screen">
         <AboutMe />
         <Portfolio />
         <div ref={scrollRef}>

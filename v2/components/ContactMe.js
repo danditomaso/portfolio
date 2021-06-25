@@ -1,5 +1,4 @@
-import { Section } from "./Section";
-import { TextBlock } from "./TextBlock";
+import { TextBlock, Section, Footer } from "./index";
 
 const ContactMe = () => {
   const TEXT_BLOCK_EXTRA_CLASS = {
@@ -37,13 +36,16 @@ const ContactMe = () => {
   };
 
   return (
-    <Section
-      title="Contact Me."
-      spanCols={true}
-      column1={renderColumn1()}
-      extraClass={SECTION_EXTRA_CLASS}
-      id="contactMe"
-    />
+    <>
+      <Section
+        title="Contact Me."
+        spanCols={true}
+        column1={renderColumn1()}
+        extraClass={SECTION_EXTRA_CLASS}
+        id="contactMe"
+      />
+      <Footer />
+    </>
   );
 };
 

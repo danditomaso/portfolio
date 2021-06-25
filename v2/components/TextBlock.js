@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const TextBlock = ({ title, content, extraClass = {}, children }) => {
+const TextBlock = ({ title, content, extraClass = {}, children }) => {
   const { containerClass, titleClass, bodyClass } = extraClass;
 
   return (
@@ -11,6 +11,8 @@ export const TextBlock = ({ title, content, extraClass = {}, children }) => {
     </article>
   );
 };
+
+export default TextBlock;
 
 TextBlock.propTypes = {
   content: PropTypes.string,
