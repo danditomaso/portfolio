@@ -26,6 +26,8 @@ const ContactMe = () => {
           <source srcSet="./assets/me-small.webp" type="image/webp" />
           <img
             loading="lazy"
+            width="500px"
+            height="501px"
             src="./assets/me-small.jpg"
             className="rounded-full"
             alt="Dan Ditomaso the author this amazing site, I am a Front End Developer and this site showcases my portfolio items!"

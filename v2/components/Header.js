@@ -15,7 +15,13 @@ const Header = ({ scrollRef }) => {
       id="header"
       className="font-sans w-full xs:border-0 md:border-24 border-solid border-white h-screen">
       <div className="top-0 left-0">
-        <img src="./assets/danlogo.svg" className="bg-black w-16 h-16" alt="" />
+        <img
+          src="./assets/danlogo.svg"
+          width="64px"
+          height="64px"
+          className="bg-black w-16 h-16"
+          alt=""
+        />
       </div>
       <div className="flex flex-col justify-center items-center space-y-8 h-full">
         <h1 className="text-6xl md:text-6xl sm:text-5xl xs:text-4xl font-light text-white uppercase">

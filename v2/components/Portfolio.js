@@ -56,7 +56,12 @@ const renderPortfolioItems = (arr) => {
         </div>
         <picture className="max-w-2xl xs:hidden md:block md:m-auto lg:ml-auto portfolio-item--img shadow-xl">
           <source srcSet={screenshot.webp} type="image/webp" />
-          <img loading="lazy" src={screenshot.webp} alt={altText}></img>
+          <img
+            width="672px"
+            height="328.2px"
+            loading="lazy"
+            src={screenshot.webp}
+            alt={altText}></img>
         </picture>
       </article>
     );
