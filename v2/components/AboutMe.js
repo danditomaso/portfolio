@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import { Section } from "./Section";
-import { TextBlock } from "./TextBlock";
+import { Section, TextBlock } from "./index";
 import { aboutMeText, allSkills } from "../data/siteData";
 
 const renderIcons = (arr = []) => {

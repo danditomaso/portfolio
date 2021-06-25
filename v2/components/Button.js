@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Button = ({ title, icon, alt, url, extraClass = {}, handleClick }) => {
+const Button = ({ title, icon, alt, url, extraClass = {}, handleClick }) => {
   const { containerClass } = extraClass;
   return (
     <button className={`button ${containerClass ? containerClass : ""}`} onClick={handleClick}>
@@ -16,6 +16,8 @@ export const Button = ({ title, icon, alt, url, extraClass = {}, handleClick }) 
     </button>
   );
 };
+
+export default Button;
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,

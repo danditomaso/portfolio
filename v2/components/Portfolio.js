@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Section } from "./Section";
-import { Button } from "./Button";
-import { TextBlock } from "./TextBlock";
+import { Section, Button, TextBlock } from "./index";
 import { portfolioData } from "../data/siteData";
 
 const ITEM_HEADER_EXTRA_CLASS = {

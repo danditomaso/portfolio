@@ -16,23 +16,25 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 :root {
   --portfolio-color-1: #e40015;
   --portfolio-color-2: #01889f;
   --portfolio-color-3: #00699d;
 }
 
+html,
 body {
-  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
   letter-spacing: 1.1px;
+  height: 100%;
+  min-height: 100vh;
 }
 
 a {

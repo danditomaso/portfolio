@@ -1,13 +1,6 @@
 import PropTypes from "prop-types";
 
-export const Section = ({
-  title,
-  column1,
-  column2,
-  spanCols = false,
-  extraClass = {},
-  children,
-}) => {
+const Section = ({ title, column1, column2, spanCols = false, extraClass = {}, children }) => {
   const { containerClass } = extraClass;
   return (
     <section
@@ -23,6 +16,8 @@ export const Section = ({
     </section>
   );
 };
+
+export default Section;
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
