@@ -10,7 +10,7 @@ export default function Home() {
       <main className="xs:border-10 md:border-24 border-solid border-white h-screen">
         <AboutMe />
         <Portfolio />
-        <div ref={scrollRef}>
+        <div ref={scrollRef} className="h-[30rem] w-full">
           <ContactMe />
         </div>
       </main>
