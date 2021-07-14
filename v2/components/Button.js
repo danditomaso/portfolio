@@ -6,7 +6,7 @@ const Button = ({ title, icon, alt, url, extraClass = {}, handleClick }) => {
   return (
     <button className={`button ${containerClass ? containerClass : ""}`} onClick={handleClick}>
       {url ? (
-        <a href={url} target="_blank" rel="noopener">
+        <a href={url} target="_blank" rel="noreferrer">
           {title}
         </a>
       ) : (

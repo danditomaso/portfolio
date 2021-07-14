@@ -10,8 +10,8 @@ const renderIcons = (arr = []) => {
         <figure className="flex items-center">
           <img
             loading="lazy"
-            height="44px"
-            width="44px"
+            height="2.75rem"
+            width="2.75rem"
             className="h-11 w-11 p-1 bg-white"
             src={`./assets/skills/${icon}`}
             alt={`The beautiful ${label} logo.`}

@@ -18,7 +18,10 @@ const ContactMe = () => {
             "I am currently employed full time as a Frontend Developer working with a team of folks building awesome things! If you have an opportunity that you would like to share I'd love to hear from you!"
           }
           extraClass={TEXT_BLOCK_EXTRA_CLASS}>
-          <a href="mailto:dan.ditomaso@gmail.com" className="md:text-4xl xs:text-lg mt-8">
+          <a
+            href="mailto:dan.ditomaso@gmail.com"
+            className="md:text-4xl xs:text-lg mt-8"
+            rel="noreferrer">
             <span className="underline">dan.ditomaso@gmail.com</span>
           </a>
         </TextBlock>
