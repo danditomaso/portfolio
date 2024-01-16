@@ -1,0 +1,46 @@
+@mixin abs-pos($top: 0, $right: auto, $bottom: auto, $left: 0) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+@mixin abs-rel($top: 0, $right: auto, $bottom: auto, $left: 0) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: relative;
+}
+
+@mixin abs-fixed($top: 0, $right: auto, $bottom: auto, $left: 0) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: fixed;
+}
+
+@mixin font($font, $size, $weight, $color) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin flex($direction) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: $direction;
+  flex: 0;
+}
+
+%device-border {
+  border: solid #333;
+  border-top-width: medium;
+  border-right-width: medium;
+  border-bottom-width: medium;
+  border-left-width: medium;
+  border-width: 0.8rem 0.5rem;
+  border-radius: 3%;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "portfolio-v1",
+  "version": "1.0.5",
+  "dependencies": {
+    "alpinejs": "^2.8.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-nightly.722",
+    "autoprefixer": "^10.2.6",
+    "parcel": "^2.0.0-beta.3.1",
+    "postcss": "^8.3.4",
+    "prettier": "^2.3.0",
+    "sass": "^1.35.0",
+    "tailwindcss": "^2.1.4"
+  },
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "description": "",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danditomaso/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danditomaso/portfolio/issues"
+  },
+  "homepage": "https://github.com/danditomaso/portfolio#readme"
+}

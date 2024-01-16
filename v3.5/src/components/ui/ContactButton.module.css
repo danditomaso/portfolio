@@ -1,0 +1,28 @@
+.button {
+  position: relative;
+  transition: 0.3s;
+}
+
+.button::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: rgb(0, 0, 0);
+  transition: transform 0.3s;
+  border-radius: 70px;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button::before {
+  transform-origin: left bottom;
+  transform: scale(1, 0);
+}
+.button:hover::before {
+  transform-origin: left bottom;
+  border-radius: calc(18.4144% / 80%);
+  transform: scale(1, 1);
+}

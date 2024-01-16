@@ -1,0 +1,11 @@
+ul {
+  @apply grid grid-flow-row xs:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-1 pt-3;
+}
+
+figcaption {
+  @apply bg-gray-400 p-2 h-11 md:text-xs lg:text-sm flex items-center font-bold w-44 min-w-[7rem];
+}
+
+.skillSection--title {
+  @apply text-4xl font-bold text-center;
+}
