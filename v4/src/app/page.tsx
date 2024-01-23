@@ -1,26 +1,10 @@
-import Text from "./components/ui/Text";
-import Nav from "./components/Nav";
+import Text from "@/components/ui/Text";
 import Link from "next/link";
 import { SiteMapLink } from "./types";
-import siteSettings from "./config/siteSettings";
+import siteSettings from "@/config/siteSettings";
+import TextBlock from "@/components/ui/TextBlock";
 
-function Heading() {
-  return (
-    <div className="flex flex-col place-content-end justify-center h-128 pl-[2vw]">
-      <div className="flex gap-5 flex-col lg:mt-0 xl:mt-auto">
-        <Text variant="h1">Dan Ditomaso</Text>
-        <Text variant="p" className="text-bold text-[1vw]">
-          {siteSettings.metadata.jobRole}
-        </Text>
-        <Text variant="p" className="text-[1vw]">
-          {siteSettings.metadata.lookingForDescription}
-        </Text>
-      </div>
-    </div>
-  );
-}
-
-function SiteLinks(props: { links: SiteMapLink }) {
+async function SiteLinks(props: { links: SiteMapLink }) {
   if (!props) return null;
   const { links } = props;
   const siteMapArr = Object.values(links);
@@ -30,7 +14,7 @@ function SiteLinks(props: { links: SiteMapLink }) {
   return siteMapArr?.map((s) => {
     return (
       <Link href={s?.url} key={s?.name}>
-        <Text variant="p" className="text-[9vw] leading-tight font-extrabold">
+        <Text variant="p" className="text-9vw leading-tight font-extrabold">
           {s?.name}
         </Text>
       </Link>
@@ -38,19 +22,18 @@ function SiteLinks(props: { links: SiteMapLink }) {
   });
 }
 
-export default function Home() {
+export default async function Home() {
   return (
-    <main className="h-screen content--grid">
-      <Nav />
-
-      <div className="flex w-full">
-        <div className="flex flex-col w-2/3 place-content-center">
-          <Heading />
-        </div>
-        <div className="flex flex-col w-full justify-center">
-          <SiteLinks links={siteSettings.siteMap} />
-        </div>
+    <div className="flex w-full gap-10">
+      <TextBlock
+        title={siteSettings.metadata.title}
+        line1={siteSettings.metadata.jobRole}
+        line2={siteSettings.metadata.description}
+        className="font-light w-1/2"
+      />
+      <div className="flex flex-col flex-shrink-0 place-content-center">
+        <SiteLinks links={siteSettings.siteMap} />
       </div>
-    </main>
+    </div>
   );
 }

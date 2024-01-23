@@ -1,12 +1,10 @@
 import Image from "next/image";
 
 import Link from "next/link";
-import { NameUrlPair } from "../types";
+import { SocialItem } from "../app/types";
 import { cn } from "@/lib/styles";
 
-type SocialArray = Array<NameUrlPair & { icon: string }>;
-
-type SocialsProps = { socials: SocialArray; iconSize?: number; className?: string };
+export type SocialsProps = { socials: SocialItem[]; iconSize?: number; className?: string };
 
 export default function Socials(props: SocialsProps) {
   const { socials, iconSize = 28, className } = props;

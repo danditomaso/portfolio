@@ -39,6 +39,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-fluid-type")],
 };
 export default config;

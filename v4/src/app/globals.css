@@ -3,20 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --dark-brand: #1a1919;
-  --light-brand: #ece7e1;
+  ---secondary-color: #1a1919;
+  ---primary-color: #ece7e1;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --foreground-rgb: #ece7e1;
-    --background-rgb: 0, 0, 0;
+    --secondary-color: var(---secondary-color);
+    --primary-color: var(---primary-color);
   }
-} */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --secondary-color: var(---primary-color);
+    --primary-color: var(---secondary-color);
+  }
+}
 
 body {
-  color: var(--dark-brand);
-  background-color: var(--light-brand);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .wrapper {
@@ -25,14 +32,22 @@ body {
   padding-right: 5%;
 }
 
-.content--grid {
+#home-work--grid {
   --gutter-size: 5%;
-  --nav-bar-size: 6%;
+  --nav-bar-size: 10%;
   display: grid;
-  grid-template-columns: [nav-bar] 6% [gutter-start] var(--gutter-size) [content] 1fr [gutter-end] var(--gutter-size) [end] 64px;
-  grid-template-rows: auto;
+  /* height: 100%;
+  width: 100%; */
+  grid-template-columns: [nav-bar] var(--nav-bar-size) [gutter-start] var(--gutter-size) [content] 1fr [gutter-end] var(--gutter-size) [end] 64px;
+  /* @media screen and (max-width: 968px) {
+    --nav-bar-size: 10%; */
+  /* } */
 }
 
-.content--grid > :not(.nav--bar) {
+#home-work--grid > :not(#nav--bar) {
   grid-column: content;
+}
+
+#nav--bar {
+  grid-column: "nav-bar";
 }
