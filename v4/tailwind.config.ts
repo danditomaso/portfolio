@@ -1,8 +1,11 @@
-import type { Config } from "tailwindcss";
-import defaultTheme from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss"
+import defaultTheme from "tailwindcss/defaultTheme"
 
 const config: Config = {
-  content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       height: {
@@ -14,9 +17,11 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        serif: ["var(--font-old-standard)", ...defaultTheme.fontFamily.serif],
+        serif: ["var(--font-playfair)", ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
+        "11vw": "11vw",
+        "10vw": "10vw",
         "9vw": "9vw",
         "8vw": "8vw",
         "7vw": "7vw",
@@ -35,10 +40,11 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
   plugins: [require("tailwindcss-fluid-type")],
-};
-export default config;
+}
+export default config
