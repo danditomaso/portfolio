@@ -1,20 +1,20 @@
-import twitterIcon from "../../public/images/twitter-icon.svg";
-import githubIcon from "../../public/images/github-icon.svg";
-import linkedInIcon from "../../public/images/linkedin-icon.svg";
-import { NameUrlPair, WorkItem, SocialItem, SiteMapLink } from "@/app/types";
+import twitterIcon from "../../public/assets/icons/twitter-icon.svg"
+import githubIcon from "../../public/assets/icons/github-icon.svg"
+import linkedInIcon from "../../public/assets/icons/linkedin-icon.svg"
+import { NameUrlPair, WorkItem, SocialItem, SiteMapLink } from "@/app/types"
 
 export type SiteSettings = {
   metadata: {
-    title: string;
-    jobRole: string;
-    lookingForDescription: string;
-    description: string;
-    siteUrl: string;
-  };
-  siteMap: SiteMapLink;
-  workItems: WorkItem[];
-  socials: SocialItem[];
-};
+    title: string
+    jobRole: string
+    lookingForDescription: string
+    description: string
+    siteUrl: string
+  }
+  siteMap: SiteMapLink
+  workItems: WorkItem[]
+  socials: SocialItem[]
+}
 
 const siteSettings: SiteSettings = {
   metadata: {
@@ -26,7 +26,7 @@ const siteSettings: SiteSettings = {
     siteUrl: "https://www.danditomaso.com",
   },
   siteMap: {
-    home: {
+    work: {
       name: "Work",
       url: "/work",
     },
@@ -42,37 +42,75 @@ const siteSettings: SiteSettings = {
   workItems: [
     {
       name: "abc123",
-      url: "https://www.google.com",
-      description: "abclajsflksa",
+      url: "work/abc123",
+      description:
+        "This is a sample description for this project, it should be a short description of the project and what it does. This is important as a way to tell how the project was built and what it does.",
       skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
     },
     {
       name: "bcd456",
-      url: "https://www.google.com",
+      url: "work/bcd456",
       description: "abclajsflksa",
       skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
     },
     {
       name: "efg789",
-      url: "https://www.google.com",
+      url: "work/efg789",
       description: "abclajsflksa",
       skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
     },
     {
       name: "hij101112",
-      url: "https://www.google.com",
+      url: "work/hij101112",
       description: "abclajsflksa",
       skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
     },
     {
       name: "klm131415",
-      url: "https://www.google.com",
+      url: "work/klm131415",
       description: "abclajsflksa",
       skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
     },
     {
       name: "nqo161718",
-      url: "https://www.google.com",
+      url: "work/nqo161718",
+      description: "abclajsflksa",
+      skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
+    },
+    {
+      name: "abc123",
+      url: "work/abc123",
+      description:
+        "This is a sample description for this project, it should be a short description of the project and what it does. This is important as a way to tell how the project was built and what it does.",
+      skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
+    },
+    {
+      name: "bcd456",
+      url: "work/bcd456",
+      description: "abclajsflksa",
+      skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
+    },
+    {
+      name: "efg789",
+      url: "work/efg789",
+      description: "abclajsflksa",
+      skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
+    },
+    {
+      name: "hij101112",
+      url: "work/hij101112",
+      description: "abclajsflksa",
+      skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
+    },
+    {
+      name: "klm131415",
+      url: "work/klm131415",
+      description: "abclajsflksa",
+      skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
+    },
+    {
+      name: "nqo161718",
+      url: "work/nqo161718",
       description: "abclajsflksa",
       skills: ["React", "Typescript", "Next.js", "TailwindCSS"],
     },
@@ -82,6 +120,6 @@ const siteSettings: SiteSettings = {
     { url: "www.linkedin.com", icon: linkedInIcon, name: "LinkedIn" },
     { url: "www.twitter.com", icon: twitterIcon, name: "Twitter" },
   ],
-};
+}
 
-export default siteSettings;
+export default siteSettings

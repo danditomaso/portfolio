@@ -1,26 +1,28 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import siteSettings from "@/config/siteSettings";
-import { cn } from "@/lib/styles";
-import Nav from "@/components/Nav";
+import type { Metadata } from "next"
+import "./globals.css"
+import siteSettings from "@/config/siteSettings"
+import { cn } from "@/lib/styles"
+import Nav from "@/components/Nav"
+import { inter, playfair } from "./fonts"
 
 export const metadata: Metadata = {
   title: siteSettings.metadata.title,
   description: "",
-};
+}
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={cn(inter.variable)}>
-        <main id="home-work--grid" className="h-screen">
+      <body className={cn(inter.variable, playfair.variable)}>
+        <main id="app--grid" className="min-h-screen">
           <Nav />
-          {children}
+          <div className="flex pl-[6vw]">{children}</div>
         </main>
       </body>
     </html>
-  );
+  )
 }
