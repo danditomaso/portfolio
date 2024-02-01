@@ -1,7 +1,7 @@
 import twitterIcon from "../../public/assets/icons/twitter-icon.svg"
 import githubIcon from "../../public/assets/icons/github-icon.svg"
 import linkedInIcon from "../../public/assets/icons/linkedin-icon.svg"
-import { NameUrlPair, WorkItem, SocialItem, SiteMapLink } from "@/app/types"
+import { WorkItem, SocialItem, SiteMap } from "@/app/types"
 
 export type SiteSettings = {
   metadata: {
@@ -11,7 +11,7 @@ export type SiteSettings = {
     description: string
     siteUrl: string
   }
-  siteMap: SiteMapLink
+  siteMap: SiteMap
   workItems: WorkItem[]
   socials: SocialItem[]
 }
