@@ -32,8 +32,8 @@ body {
 } */
 
 #app--grid {
-  --gutter-size: 4%;
-  --nav-bar-size: 6%;
+  --gutter-size: 8%;
+  --nav-bar-size: 5%;
   display: grid;
   height: 100%;
   width: 100%;
@@ -51,4 +51,20 @@ body {
 
 #nav--bar {
   grid-column: "nav-bar";
+}
+
+.hr-line {
+  position: relative;
+  text-align: center;
+}
+
+.hr-line:before {
+  content: " ";
+  height: 9rem;
+  width: 1px;
+  background: var(--secondary-color);
+  display: inline-block;
+  position: absolute;
+  top: 150%;
+  left: 50%;
 }
