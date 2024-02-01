@@ -1,15 +1,14 @@
 import Text from "@/components/ui/Text"
 import siteSettings from "@/config/siteSettings"
-export default async function WorkitemPage({ params }) {
-  console.log(params)
+export default async function WorkitemPage() {
   const { description, name } = siteSettings.workItems[0]
 
   return (
     <section className="flex h-full w-full flex-col place-items-center text-balance">
-      <div className="flex h-screen w-full flex-col place-items-center bg-secondary-color px-8 py-6">
+      <div className="flex h-[95vh] w-full flex-col place-items-center bg-secondary-color px-8 py-6">
         <Text
           variant="h1"
-          className="mb-36 mt-auto font-serif text-[16vw] font-extrabold capitalize leading-tight text-primary-color"
+          className="mb-96 mt-auto font-serif text-[14vw] capitalize leading-tight text-primary-color"
         >
           {name}
         </Text>
