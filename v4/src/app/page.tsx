@@ -1,10 +1,9 @@
 import Text from "@/components/ui/Text"
 import Link from "next/link"
-import { SiteMapLink } from "./types"
+import { SiteMap } from "./types"
 import siteSettings from "@/config/siteSettings"
-import TextBlock from "@/components/ui/TextBlock"
 
-async function SiteMenu(props: { links: SiteMapLink }) {
+async function SiteMenu(props: { links: SiteMap }) {
   if (!props) return null
   const { links } = props
   const siteMapArr = Object.values(links)
@@ -13,10 +12,10 @@ async function SiteMenu(props: { links: SiteMapLink }) {
 
   return siteMapArr?.map((s) => {
     return (
-      <Link href={s?.url} key={s?.name}>
+      <Link href={s?.url} key={s?.name} className="w-full">
         <Text
           variant="p"
-          className="font-serift text-9vw font-extrabold leading-tight"
+          className="font-serif text-[9vw] font-extrabold leading-tight"
         >
           {s?.name}
         </Text>
@@ -27,16 +26,20 @@ async function SiteMenu(props: { links: SiteMapLink }) {
 
 export default async function Home() {
   return (
-    <section className="flex h-full w-full">
-      <div className="fixed left-[15%] top-[60%]">
-        <TextBlock
-          title={siteSettings.metadata.title}
-          line1={siteSettings.metadata.jobRole}
-          line2={siteSettings.metadata.description}
-          className="font-light"
-        />
+    <section className="flex h-full w-full place-content-center place-items-center">
+      <div className="flex w-1/3 flex-col gap-8 self-center pl-16">
+        <Text variant="h1">{siteSettings.metadata.title}</Text>
+        <Text variant="p" className="">
+          {siteSettings.metadata.jobRole}
+        </Text>
+        <Text
+          variant="p"
+          className="max-w-[50ch] text-balance font-extralight tracking-wider"
+        >
+          {siteSettings.metadata.description}
+        </Text>
       </div>
-      <div className="ml-auto flex w-1/2 flex-col place-content-center p-[2%]">
+      <div className="lg:3/4 ml-auto flex flex-col place-content-center items-start 2xl:w-3/5">
         <SiteMenu links={siteSettings.siteMap} />
       </div>
     </section>

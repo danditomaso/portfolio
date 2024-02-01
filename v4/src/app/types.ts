@@ -16,7 +16,7 @@ export type WorkItem = {
   skills: string[]
 }
 
-export type SiteMapLink = {
+export type SiteMap = {
   work: NameUrlPair
   about: NameUrlPair
   contact: NameUrlPair
