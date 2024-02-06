@@ -1,9 +1,9 @@
 import Image from "next/image"
 
-import githubIcon from "../../public/assets/icons/github-icon.svg"
+import type { SocialItem } from "@/app/(site)/types"
+import { cn } from "@/lib/styling/styles"
+// import githubIcon from "../../public/assets/icons/github-icon.svg"
 import Link from "next/link"
-import { SocialItem } from "../app/types"
-import { cn } from "@/lib/styles"
 
 export type SocialsProps = {
   socials: SocialItem[]

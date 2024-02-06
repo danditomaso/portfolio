@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --secondary-color: #1a1919;
+  --primary-color: #f6f6ee;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --secondary-color: #f6f6ee;
+    --primary-color: #1a1919;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #1a1919;
+    --secondary-color: #f6f6ee;
+  }
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* .wrapper {
+  padding-left: 10%;
+  padding-right: 5%;
+} */
+
+#app--grid {
+  --gutter-size: 6vw;
+  --nav-bar-size: 6vw;
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  grid-template-columns:
+    [nav-bar] var(--nav-bar-size)
+    [content] 1fr [end] var(--gutter-size);
+  @media screen and (max-width: 968px) {
+    --nav-bar-size: 10%;
+  }
+}
+
+#app--grid > :not(#nav--bar) {
+  grid-column: content;
+}
+
+#nav--bar {
+  grid-column: "nav-bar";
+}
+
+.hr-line {
+  position: relative;
+  text-align: center;
+}
+
+.hr-line:before {
+  content: " ";
+  height: 9rem;
+  width: 1px;
+  background: var(--secondary-color);
+  display: inline-block;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+}

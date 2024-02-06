@@ -1,7 +1,7 @@
-import twitterIcon from "../../public/assets/icons/twitter-icon.svg"
+import type { SiteMap, SocialItem, Work } from "@/app/(site)/types"
 import githubIcon from "../../public/assets/icons/github-icon.svg"
 import linkedInIcon from "../../public/assets/icons/linkedin-icon.svg"
-import { WorkItem, SocialItem, SiteMap } from "@/app/types"
+import twitterIcon from "../../public/assets/icons/twitter-icon.svg"
 
 export type SiteSettings = {
   metadata: {
@@ -10,9 +10,10 @@ export type SiteSettings = {
     lookingForDescription: string
     description: string
     siteUrl: string
+    email: string
   }
   siteMap: SiteMap
-  workItems: WorkItem[]
+  work: Work[]
   socials: SocialItem[]
 }
 
@@ -24,6 +25,7 @@ const siteSettings: SiteSettings = {
     description:
       "I build delightful user experiences that thoughtful user experiences that piece together a big picture with simple, impactful and shippable solutions focused on the customer",
     siteUrl: "https://www.danditomaso.com",
+    email: "dan.ditomaso@gmail.com",
   },
   siteMap: {
     work: {
@@ -39,7 +41,7 @@ const siteSettings: SiteSettings = {
       url: "/contact",
     },
   },
-  workItems: [
+  work: [
     {
       name: "abc123",
       url: "work/abc123",
