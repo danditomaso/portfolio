@@ -1,4 +1,17 @@
+import { Metadata } from "next"
 import config from "."
+import { MDXFrontmatter } from "@/app/(site)/types"
+
+export const defaultFrontmatter: MDXFrontmatter = {
+  title: "Dan Ditomaso",
+  siteUrl: "https://danditomaso.com",
+  description: "",
+  date: "",
+  slug: "",
+  tags: [],
+  tech: [],
+  publish_date: new Date(),
+}
 
 const author = {
   name: "Dan Ditomaso",
@@ -12,9 +25,9 @@ const defaultTitle = "@danditomaso"
 const defaultDescription =
   "Hi folks! I'm Dan Ditomaso, a Software Engineer from Colombia based in Milan. I ❤️ Open Source, JavaScript, the music, the food, the challenges and the continous improvement."
 
-const metadata = {
+export const defaultMetadata: Metadata = {
   title: {
-    template: "%s | @mateonunez",
+    template: "%s | @danditomaso",
     default: defaultTitle,
   },
   description: defaultDescription,
@@ -31,14 +44,12 @@ const metadata = {
     "hono",
     "react",
     "nextjs",
-    "typescript",
     "tailwind",
     "tailwindcss",
     "canada",
   ],
-  author,
   authors: [author],
-  colorSchema: "dark",
+  colorScheme: "dark",
   metadataBase: new URL(config.baseUrl),
   openGraph: {
     title: defaultTitle,
@@ -69,5 +80,3 @@ const metadata = {
     creator: "@danditomaso",
   },
 }
-
-export default metadata

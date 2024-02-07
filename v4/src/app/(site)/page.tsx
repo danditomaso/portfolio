@@ -25,12 +25,12 @@ export default async function Home() {
   return (
     <section className="ml-48 flex h-full w-full place-content-center place-items-center">
       <div className="flex w-1/3 flex-col gap-8 self-center pl-16">
-        <Text variant="h1">{siteSettings.metadata.title}</Text>
+        <Text variant="h1">{siteSettings.siteMetadata.title}</Text>
         <Text variant="p" className="">
-          {siteSettings.metadata.jobRole}
+          {siteSettings.siteMetadata.jobRole}
         </Text>
         <Text variant="p" className="max-w-[50ch] text-balance font-extralight tracking-wider">
-          {siteSettings.metadata.description}
+          {siteSettings.siteMetadata.description}
         </Text>
       </div>
       <div className="lg:3/4 ml-auto flex flex-col place-content-center items-start 2xl:w-3/5">

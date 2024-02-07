@@ -1,24 +1,45 @@
-import fs from "fs"
-import { mdxComponents } from "../../../mdx-components"
-import { getWorkEntryBySlug } from "@/lib/mdx"
-import { MDXRemote } from "next-mdx-remote/rsc"
+import WorkEntry from "@/components/work"
+import config from "@/lib/config"
+import { getWorkBySlug } from "@/lib/mdx"
 
-// export default ({children}) => (<div>{children}</div>)
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params
+
+  const { meta } = await getWorkBySlug({ slug })
+  const { title, description, keywords } = meta
+
+  const baseUrl = new URL(config.baseUrl)
+  // const imagePath = frontmatter.image.startsWith("/") ? frontmatter.image : `/${frontmatter.image}`
+  // const imageUrl = new URL(imagePath, baseUrl).toString()
+
+  const dynamicMetadata = {
+    ...meta,
+    title,
+    description,
+    keywords,
+    openGraph: {
+      ...meta.openGraph,
+      title,
+      description,
+      type: "article",
+      article: {
+        // authors: [frontmatter.author.name],
+        // publishedTime: frontmatter.date,
+        // modifiedTime: frontmatter.date,
+      },
+      images: [
+        {
+          // url: imageUrl,
+          // alt: frontmatter.title,
+        },
+      ],
+    },
+  }
+  return dynamicMetadata
+}
+
 export default async function WorkEntryPage() {
-  const { content, meta } = await getWorkEntryBySlug("abc123")
+  const { meta, content, frontmatter } = await getWorkBySlug({ slug: "abc123" })
 
-  return (
-    <>
-      {/* <MDXRemote
-        // source={`# Hello World
-
-        // This is from Server Components!
-        // `}
-        source={fileContent}
-        components={mdxComponents}
-        options={{ parseFrontmatter: true }} */}
-      {/* /> */}
-      {content}
-    </>
-  )
+  return <WorkEntry frontmatter={frontmatter} content={content} meta={meta} />
 }

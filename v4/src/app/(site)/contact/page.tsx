@@ -3,7 +3,7 @@ import siteSettings from "@/config/siteSettings"
 import Link from "next/link"
 
 export default async function ContactPage() {
-  const { email } = siteSettings.metadata
+  const { email } = siteSettings.siteMetadata
   return (
     <section className="ml-48 flex h-screen w-full flex-col gap-9">
       <Text variant={"h1"} className="py-3 font-serif text-[8vw]">

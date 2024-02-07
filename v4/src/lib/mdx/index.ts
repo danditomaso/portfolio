@@ -1,73 +1,77 @@
 import fs from "fs"
-import { mdxComponents } from "../../mdx-components"
+import { mdxComponents } from "@/components/work/mdx/mdx-components"
+import { defaultFrontmatter, defaultMetadata } from "@/lib/config/metadata"
 import { globby } from "globby"
 import { compileMDX } from "next-mdx-remote/rsc"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
-import rehypeHighlight from "rehype-highlight"
-import path from "path"
+import { MDXContent, MDXFrontmatter } from "@/app/(site)/types"
+import { Metadata } from "next"
 
 const FOLDER_PATH = "content"
 
-export async function getWorkEntryBySlug(slug: string) {
-  const [filePath] = await globby(`${FOLDER_PATH}/${slug}.mdx`, { onlyFiles: true })
-
-  const fileContent = fs.readFileSync(filePath, { encoding: "utf8" })
-  console.log(fileContent)
-
-  const { frontmatter, content } = await compileMDX({
-    source: fileContent,
-    components: mdxComponents,
-    options: {
-      parseFrontmatter: true,
-      mdxOptions: {
-        // remarkPlugins: [{}],
-        // rehypePlugins: [
-        //   [rehypeHighlight as any, {}],
-        //   [rehypeAutolinkHeadings, {}],
-        //   [rehypeSlug, { enableCustomId: true, maintainCase: true, removeAccents: true }],
-        // ],
-      },
-    },
-  })
-  console.log({ frontmatter, content })
-
-  return { meta: { ...frontmatter, slug }, content }
+interface MDXParsedData {
+  frontmatter: MDXFrontmatter
+  meta: Metadata & { slug: string }
+  content: MDXContent
 }
 
-// export const getWorkEntryBySlug = async slug => {
+const workCache = new Map<string, MDXParsedData>()
 
-//   const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' })
-
-//   const { frontmatter, content } = await compileMDX({
-//     source: fileContent,
-//     options: { parseFrontmatter: true },
-//     components: components // <--- remove the curly braces
-//   })
-
-//   return { meta: { ...frontmatter, slug: realSlug }, content }
-// }
+export async function getWorkBySlug({ slug }: { slug: string }) {
+  const parsedData = await getWorkData({ slug })
+  return parsedData
+}
 
 export async function getAllWorkEntries() {
+  const slugs = await getAllWorkSlugs()
+  const workEntries = []
+  for (const slug of slugs) {
+    const { frontmatter } = await getWorkData({ slug })
+    workEntries.push({ ...frontmatter, slug })
+  }
+  return workEntries.sort((a, b) => (a.date > b.date ? -1 : 1))
+}
+
+async function getAllWorkSlugs() {
   const files = await globby(`${FOLDER_PATH}/*.mdx`, { onlyFiles: true })
   const fileNames = files.map((file) => file.replace(`${FOLDER_PATH}/`, "").replace(".mdx", ""))
   return fileNames
 }
 
-// export const getPostBySlug = async (slug) => {
-//   const fileSlug = slug.replace(/\.mdx$/, "")
-//   const fileContent = fs.readFileSync(`${FOLDER_PATH}/${fileSlug}.mdx`, {
-//     encoding: "utf-8",
-//   })
-//   const { frontmatter, content } = await compileMDX({
-//     source: fileContent,
-//     options: {
-//       parseFrontmatter: true,
-//     },
-//     components,
-//   })
+async function parseWorkData({
+  raw,
+  slug = "",
+}: { raw: string; slug: string }): Promise<MDXParsedData> {
+  const { frontmatter, content } = await compileMDX({
+    source: raw,
+    components: mdxComponents,
+    options: {
+      parseFrontmatter: true,
+    },
+  })
 
-//   return {
-//     meta: { ...frontmatter, slug: fileSlug },
-//     content,
-//   }
-// }
+  // const baseUrl = new URL(config.baseUrl)
+  // const permalink = new URL(articlePath, baseUrl).toString()
+
+  return {
+    frontmatter: {
+      ...defaultFrontmatter,
+      ...frontmatter,
+    },
+    meta: {
+      ...defaultMetadata,
+      slug,
+      // date: data?.date ? new Date(data.date)?.toISOString() : new Date().toISOString(),
+    },
+    content,
+  }
+}
+
+async function getWorkData({ slug }: { slug: string }): Promise<MDXParsedData> {
+  const [filePath] = await globby(`${FOLDER_PATH}/${slug}.mdx`, { onlyFiles: true })
+  const raw = fs.readFileSync(filePath, { encoding: "utf8" })
+  const parsedData = await parseWorkData({ raw, slug })
+
+  workCache.set(slug, parsedData)
+
+  return parsedData
+}

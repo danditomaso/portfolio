@@ -1,15 +1,13 @@
 import Nav from "@/components/nav/nav"
-import siteSettings from "@/config/siteSettings"
 import { inter, playfair } from "@/styles/fonts"
 import { cn } from "@/lib/styling/styles"
 import "@/styles/globals.css"
-import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
-export const metadata: Metadata = {
-  title: siteSettings.metadata.title,
-  description: "",
-}
+// export const metadata: Metadata = {
+//   title: siteSettings.metadata.title,
+//   description: "",
+// }
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (

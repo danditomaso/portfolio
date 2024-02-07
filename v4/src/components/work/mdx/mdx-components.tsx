@@ -7,8 +7,8 @@
 
 import type { MDXComponents } from "mdx/types"
 import Link from "next/link"
-import Row from "./components/work/mdx/row"
-import Column from "./components/work/mdx/column"
+import Row from "./row"
+import Column from "./column"
 
 export const mdxComponents: MDXComponents = {
   h1: ({ children }) => (

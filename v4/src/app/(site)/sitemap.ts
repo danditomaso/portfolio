@@ -5,25 +5,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const { about, contact, work } = siteSettings.siteMap
   return [
     {
-      url: siteSettings.metadata.siteUrl,
+      url: siteSettings.siteMetadata.siteUrl,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: siteSettings.metadata.siteUrl.concat(contact.url),
+      url: siteSettings.siteMetadata.siteUrl.concat(contact.url),
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: siteSettings.metadata.siteUrl.concat(about.url),
+      url: siteSettings.siteMetadata.siteUrl.concat(about.url),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: siteSettings.metadata.siteUrl.concat(work.url),
+      url: siteSettings.siteMetadata.siteUrl.concat(work.url),
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.5,
