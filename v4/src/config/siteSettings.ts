@@ -1,4 +1,4 @@
-import type { SiteMap, SocialItem, Work } from "@/app/(site)/types"
+import type { SiteMap, SocialItem } from "@/app/(site)/types"
 import githubIcon from "../../public/assets/icons/github-icon.svg"
 import linkedInIcon from "../../public/assets/icons/linkedin-icon.svg"
 import twitterIcon from "../../public/assets/icons/twitter-icon.svg"
@@ -12,7 +12,7 @@ export type SiteSettings = {
     siteUrl: string
     email: string
   }
-  siteMap: SiteMap
+  siteMenu: SiteMap
   socials: SocialItem[]
 }
 
@@ -26,7 +26,7 @@ const siteSettings: SiteSettings = {
     siteUrl: "https://www.danditomaso.com",
     email: "dan.ditomaso@gmail.com",
   },
-  siteMap: {
+  siteMenu: {
     work: {
       name: "Work",
       url: "/work",

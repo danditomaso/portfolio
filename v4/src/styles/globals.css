@@ -65,6 +65,6 @@ body {
   background: var(--secondary-color);
   display: inline-block;
   position: absolute;
-  top: 150%;
+  top: 125%;
   left: 50%;
 }

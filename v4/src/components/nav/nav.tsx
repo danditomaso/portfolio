@@ -12,19 +12,19 @@ export default function Nav() {
   return (
     <nav
       id="nav--bar"
-      className="fixed bottom-0 left-0 top-0 grid w-[6%] grid-rows-8 place-content-center place-items-center px-6"
+      className="fixed bottom-0 left-0 top-0 grid w-[6%] grid-rows-8 place-content-center place-items-center"
     >
-      <Link href={url} className="hr-line row-start-2 p-6">
+      <Link href={url} className="hr-line row-start-1 mt-10 p-6">
         <Text
           variant={"p"}
           className={
-            "flex rotate-180 text-lg font-bold capitalize tracking-wide [writing-mode:vertical-lr]"
+            "flex rotate-180 text-[14px] font-medium tracking-[5px]  uppercase [writing-mode:vertical-lr]"
           }
         >
           {page}
         </Text>
       </Link>
-      <Socials socials={siteSettings?.socials} iconSize={32} className="row-start-5" />
+      <Socials socials={siteSettings?.socials} iconSize={32} className="row-start-7" />
     </nav>
   )
 }
