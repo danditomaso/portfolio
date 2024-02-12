@@ -23,8 +23,8 @@ async function SiteMenu(props: { links: SiteMap }) {
 
 export default async function Home() {
   return (
-    <section className="ml-48 flex h-full w-full place-content-center place-items-center">
-      <div className="flex w-1/3 flex-col gap-8 self-center pl-16">
+    <section className="flex h-full gap-16 w-full place-content-center place-items-center">
+      <div className="flex w-1/2 flex-col self-center px-16">
         <Text variant="h1">{siteSettings.siteMetadata.title}</Text>
         <Text variant="p" className="">
           {siteSettings.siteMetadata.jobRole}
@@ -33,8 +33,8 @@ export default async function Home() {
           {siteSettings.siteMetadata.description}
         </Text>
       </div>
-      <div className="lg:3/4 ml-auto flex flex-col place-content-center items-start 2xl:w-3/5">
-        <SiteMenu links={siteSettings.siteMap} />
+      <div className="w-1/2 ml-auto flex flex-col place-content-center items-start">
+        <SiteMenu links={siteSettings.siteMenu} />
       </div>
     </section>
   )

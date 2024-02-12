@@ -6,7 +6,8 @@ const styleMap = {
   h3: "font-sans text-1xl",
   h4: "font-sans text-xl",
   h5: "font-sans text-lg",
-  p: "font-sans text-md",
+  p: "font-sans text-md tracking-wide leading-relaxed font-light",
+  span: "font-sans text-md",
 }
 
 type TextProps = {

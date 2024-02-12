@@ -1,7 +1,7 @@
 import { Text } from "@/components/text"
 export default async function AboutPage() {
   return (
-    <section className="flex h-full w-full flex-col gap-9">
+    <section className="ml-48 flex h-screen w-full flex-col gap-4">
       <Text variant={"h1"} className="py-3 font-serif text-[14vw]">
         About
       </Text>

@@ -12,7 +12,7 @@ function WorkEntry(props: MDXParsedData) {
       <div className="h-screen w-full">
         {/* <ArticleMeta date={date} author={author} tags={tags} readingTime={readingTime} /> // */}
         <WorkItemTitle title={title as string} />
-        <div className="w-full m-auto max-w-[135ch]">
+        <div className="w-full m-auto max-w-[135ch] mt-[15vh]">
           <WorkItemInfo description={description as string} tech={tech} url={siteUrl} />
           <WorkItemContent content={content} />
         </div>
