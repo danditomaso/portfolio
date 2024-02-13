@@ -5,6 +5,12 @@
 :root {
   --secondary-color: #1a1919;
   --primary-color: #f6f6ee;
+  --breakpoint-sm: '640px';
+  --breakpoint-md: '768px';
+  --breakpoint-lg: '1024px';
+  --breakpoint-xl: '1280px';
+  --breakpoint-2xl: '1536x';
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -21,15 +27,12 @@
   }
 }
 
+
 body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+ 
 }
-
-/* .wrapper {
-  padding-left: 10%;
-  padding-right: 5%;
-} */
 
 #app--grid {
   --gutter-size: 6vw;
@@ -38,10 +41,14 @@ body {
   height: 100vh;
   width: 100%;
   grid-template-columns:
-    [nav-bar] var(--nav-bar-size)
+    [nav-bar] var(--nav-bar-size) [gutter] var(--gutter-size)
     [content] 1fr [end] var(--gutter-size);
-  @media screen and (max-width: 968px) {
-    --nav-bar-size: 10%;
+
+  @media screen and (max-width: 1024px) {
+      grid-template-rows:
+    [nav-bar] var(--nav-bar-size) [gutter] var(--gutter-size)
+    [content] 1fr [end] var(--gutter-size);
+    
   }
 }
 
@@ -53,6 +60,10 @@ body {
   grid-column: "nav-bar";
 }
 
+.quote {
+  @apply font-extralight font-serif text-2xl tracking-widest leading-5 
+
+}
 .hr-line {
   position: relative;
   text-align: center;

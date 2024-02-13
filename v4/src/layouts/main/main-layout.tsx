@@ -15,7 +15,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
       <body className={cn(inter.variable, playfair.variable)}>
         <main id="app--grid">
           <Nav />
-          <div className="flex ml-[6%]">{children}</div>
+          {children}
         </main>
       </body>
     </html>

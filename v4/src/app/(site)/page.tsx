@@ -24,8 +24,10 @@ async function SiteMenu(props: { links: SiteMap }) {
 export default async function Home() {
   return (
     <section className="flex h-full gap-16 w-full place-content-center place-items-center">
-      <div className="flex w-1/2 flex-col self-center px-16">
-        <Text variant="h1">{siteSettings.siteMetadata.title}</Text>
+      <div className="flex w-1/2 flex-col self-center px-[6%] gap-8">
+        <Text variant="h1" className="tracking-tight">
+          {siteSettings.siteMetadata.title}
+        </Text>
         <Text variant="p" className="">
           {siteSettings.siteMetadata.jobRole}
         </Text>

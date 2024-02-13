@@ -1,7 +1,8 @@
 import { cn } from "@/lib/styling/styles"
 
 const styleMap = {
-  h1: "font-sans font-bold text-4xl leading-tight",
+  // h1: "font-sans font-bold text-4xl leading-tight",
+  h1: "font-sans font-extralight text-4xl leading-tight uppercase tracking-display pointer-events-none",
   h2: "font-sans text-2xl",
   h3: "font-sans text-1xl",
   h4: "font-sans text-xl",

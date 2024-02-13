@@ -4,6 +4,13 @@ import defaultTheme from "tailwindcss/defaultTheme"
 const config: Config = {
   content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    screens: {
+      sm: "var(--breakpoint-sm)",
+      md: "var(--breakpoint-md)",
+      lg: "var(--breakpoint-lg)",
+      xl: "var(--breakpoint-xl)",
+      "2xl": "var(--breakpoint-2xl)",
+    },
     extend: {
       height: {
         128: "28rem",
@@ -15,6 +22,10 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
         serif: ["var(--font-playfair)", ...defaultTheme.fontFamily.serif],
+      },
+      letterSpacing: {
+        widest: ".1em",
+        display: "-0.053em",
       },
       fontSize: {
         "11vw": "11vw",

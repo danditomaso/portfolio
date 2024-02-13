@@ -18,7 +18,7 @@ export default function Nav() {
         <Text
           variant={"p"}
           className={
-            "flex rotate-180 text-[14px] font-medium tracking-[5px]  uppercase [writing-mode:vertical-lr]"
+            "flex rotate-180 text-[14px] font-medium tracking-[5px] uppercase [writing-mode:vertical-lr]"
           }
         >
           {page}
