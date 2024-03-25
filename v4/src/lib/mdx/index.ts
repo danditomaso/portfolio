@@ -1,10 +1,11 @@
-import fs from "fs"
+import fs from "node:fs"
 import { mdxComponents } from "@/components/work/mdx/mdx-components"
 import { defaultFrontmatter, defaultMetadata } from "@/lib/config/metadata"
 import { globby } from "globby"
 import { compileMDX } from "next-mdx-remote/rsc"
-import { MDXContent, MDXFrontmatter } from "@/app/(site)/types"
-import { Metadata } from "next"
+import type { MDXContent, MDXFrontmatter } from "@/app/(site)/types"
+import type { Metadata } from "next"
+import { redirect } from "next/navigation"
 
 const FOLDER_PATH = "content"
 
@@ -18,6 +19,7 @@ const workCache = new Map<string, MDXParsedData>()
 
 export async function getWorkBySlug({ slug }: { slug: string }) {
   const parsedData = await getWorkData({ slug })
+
   return parsedData
 }
 
@@ -67,8 +69,18 @@ async function parseWorkData({
 }
 
 async function getWorkData({ slug }: { slug: string }): Promise<MDXParsedData> {
-  const [filePath] = await globby(`${FOLDER_PATH}/${slug}.mdx`, { onlyFiles: true })
+  const [filePath] = await globby(`${FOLDER_PATH}/${slug}.mdx`, { onlyFiles: true }).catch((e) => {
+    console.error(e)
+    return []
+  })
+
+  if (!filePath) {
+    console.error("requestd file path not found")
+    return redirect("/notfound")
+  }
+
   const raw = fs.readFileSync(filePath, { encoding: "utf8" })
+
   const parsedData = await parseWorkData({ raw, slug })
 
   workCache.set(slug, parsedData)
