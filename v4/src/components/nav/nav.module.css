@@ -1,0 +1,17 @@
+
+
+.hr_line {
+  position: relative;
+  text-align: center;
+}
+
+.hr_line:before {
+  content: " ";
+  height: 9rem;
+  width: 1px;
+  background: var(--secondary-color);
+  display: inline-block;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+}

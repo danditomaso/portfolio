@@ -27,11 +27,9 @@
   }
 }
 
-
 body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
- 
 }
 
 #app--grid {
@@ -43,13 +41,7 @@ body {
   grid-template-columns:
     [nav-bar] var(--nav-bar-size) [gutter] var(--gutter-size)
     [content] 1fr [end] var(--gutter-size);
-
-  @media screen and (max-width: 1024px) {
-      grid-template-rows:
-    [nav-bar] var(--nav-bar-size) [gutter] var(--gutter-size)
-    [content] 1fr [end] var(--gutter-size);
-    
-  }
+  
 }
 
 #app--grid > :not(#nav--bar) {
@@ -57,25 +49,10 @@ body {
 }
 
 #nav--bar {
-  grid-column: "nav-bar";
+  grid-column: nav-bar;
 }
 
 .quote {
   @apply font-extralight font-serif text-2xl tracking-widest leading-5 
 
-}
-.hr-line {
-  position: relative;
-  text-align: center;
-}
-
-.hr-line:before {
-  content: " ";
-  height: 9rem;
-  width: 1px;
-  background: var(--secondary-color);
-  display: inline-block;
-  position: absolute;
-  top: 125%;
-  left: 50%;
 }
