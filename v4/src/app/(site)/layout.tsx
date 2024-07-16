@@ -1,42 +1,19 @@
-import Nav from "@/components/nav/nav"
-import { inter, playfair } from "@/styles/fonts"
-import { cn } from "@/lib/styling/styles"
-import "@/styles/globals.css"
 import type { ReactNode } from "react"
+import Sidebar from "@/components/sidebar/sidebar"
+import { montserrat, playfair } from "@/styles/fonts"
+import { cn } from "@/lib/styling/styles"
+import "@/styles/style.css"
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={cn(inter.variable, playfair.variable)}>
-        <main id="app--grid">
-          <Nav />
+      <body className={cn(montserrat.variable, playfair.variable, "h-screen")}>
+        {/* <main id="app--grid"> */}
+        <main className="flex flex-col md:flex-row h-full">
+          <Sidebar />
           {children}
         </main>
       </body>
     </html>
   )
 }
-
-// import Nav from "@/components/nav/nav"
-// import { inter, playfair } from "@/styles/fonts"
-// import { cn } from "@/lib/styling/styles"
-// import "@/styles/globals.css"
-// import type { ReactNode } from "react"
-
-// // export const metadata: Metadata = {
-// //   title: siteSettings.metadata.title,
-// //   description: "",
-// // }
-
-// export default function MainLayout({ children }: { children: ReactNode }) {
-//   return (
-//     <html lang="en">
-//       <body className={cn(inter.variable, playfair.variable)}>
-//         <main id="app--grid">
-//           <Nav />
-//           {children}
-//         </main>
-//       </body>
-//     </html>
-//   )
-// }
