@@ -1,9 +1,8 @@
 import { Text } from "@/components/text"
 import { getAllWorkEntries } from "@/lib/mdx"
-// import { getAllWorkEntries } from "@/lib/mdx"
 import { cn } from "@/lib/styling/styles"
 import Link from "next/link"
-import { MDXFrontmatter } from "../types"
+import type { MDXFrontmatter } from "../types"
 
 function WorkItemsList(props: {
   workItems: MDXFrontmatter[]
@@ -15,7 +14,10 @@ function WorkItemsList(props: {
     return (
       <li key={w?.slug as string} className="mb-4">
         <Link href={`/work/${w.slug}`} className="flex flex-col">
-          <Text variant="p" className="font-serif text-[7vw] font-extrabold leading-[1em]">
+          <Text
+            variant="p"
+            className="font-serif text-[5vw] font-extrabold leading-tight tracking-wide"
+          >
             {w?.title as string}
           </Text>
           {w.tech.length > 0 && (
@@ -37,9 +39,9 @@ export default async function WorkListPage() {
   const listOfWork = await getAllWorkEntries()
 
   return (
-    <section className="flex h-full gap-16 w-full">
-      <div className="flex w-1/2 place-content-center">
-        <div className="m-auto gap-8 flex-flex-col">
+    <section className="flex gap-12 h-full w-full mt-[10%]">
+      <div className="flex">
+        <div className="place-items-center place-content-center md gap-6 flex flex-col">
           <Text variant="h1" className="tracking-widest">
             Work
           </Text>
@@ -63,7 +65,7 @@ export default async function WorkListPage() {
         </Text> */}
         </div>
       </div>
-      <div className="flex flex-col w-1/2 mt-[10%]">
+      <div className="flex flex-col">
         <WorkItemsList workItems={listOfWork} />
       </div>
     </section>
